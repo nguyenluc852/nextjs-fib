@@ -50,10 +50,10 @@ const Table: React.FC<Props> = (props) => {
         case 'Hủy đặt cọc':
           return <span className={c("text-truncate font-bold flex items-center text-red-500", s.textTruncate)}>{data} </span>
         case 'Đã Thanh Toán':
-        case 'Đã chuyển đến':
-          return <span className={c("text-truncate font-bold flex items-center text-blue-500", s.textTruncate)}>{data} </span>
+        case '1':
+          return <span className={c("text-truncate font-bold flex items-center text-blue-500", s.textTruncate)}>{"Đã Chuyển Thành Công"} </span>
         default:
-          return <span className={c("text-truncate font-bold flex items-center text-green-500", s.textTruncate)}>{data} </span>
+          return <span className={c("text-truncate font-bold flex items-center text-green-500", s.textTruncate)}>{"Order Thành Công"} </span>
       }
       return 
     } else {

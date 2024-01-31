@@ -8,7 +8,7 @@ class ApiClient {
   }
 
   private static init = (token?: string) => {
-    const baseURL = 'https://ow59xtilxf.execute-api.ap-southeast-1.amazonaws.com/dev/'
+    const baseURL = 'https://rjkjtufrg1.execute-api.ap-southeast-1.amazonaws.com/dev/'
     
     if (!baseURL) throw new Error("エンドポイントを取得できません")
 

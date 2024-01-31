@@ -14,24 +14,25 @@ import {
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { useRouter } from 'next/router';
+import Image from '../../atom/Image';
 
 const solutions: any[] = [
   {
-    name: 'Home',
+    name: 'AboutUs',
     description: 'Get a better understanding of where your traffic is coming from.',
     href: '/home',
     icon: ChartBarIcon,
   },
   {
-    name: 'Order',
+    name: 'Sản Phẩm',
     description: 'Speak directly to your customers in a more meaningful way.',
     href: '/order',
     icon: CursorArrowRaysIcon,
   },
   {
-    name: 'AboutUs',
+    name: 'Lộ Trình',
     description: 'Speak directly to your customers in a more meaningful way.',
-    href: '/aboutus',
+    href: '#',
     icon: XMarkIcon,
   },
 ]
@@ -51,11 +52,12 @@ const Header = (props: Props) => {
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <Link href="#" key="home">
                 <span className="sr-only">Your Company</span>
-                <img
+                {/* <img
                   className="h-8 w-auto sm:h-10"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
-                />
+                  src="/logo.png"
+                  alt="" */}
+                {/* /> */}
+                <Image path="/logo.png" width={80} height={80}/>
               </Link>
             </div>
             <div className="-my-2 -mr-2 md:hidden">
