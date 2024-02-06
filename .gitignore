@@ -3,3 +3,7 @@ node_modules
 .next/cache/webpack/client-development/0.pack
 .next/react-loadable-manifest.json
 .DS_Store
+awsConfigution.ts
+.env
+.env.development.local
+.env.production.local

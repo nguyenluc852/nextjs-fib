@@ -5,7 +5,8 @@ import type { PayloadAction } from "@reduxjs/toolkit"
 
 const initialState: State = {
   listOrder: [],
-  order: null
+  order: null,
+  token: "",
 }
 
 const slice = createSlice({
@@ -17,6 +18,9 @@ const slice = createSlice({
     },
     setEditOrder: (state, action: PayloadAction<OrderInfo>) => {
       state.order = action.payload
+    },
+    setAccesToken : (state, action: PayloadAction<string>) => {
+      state.token = action.payload
     }
   },
 })

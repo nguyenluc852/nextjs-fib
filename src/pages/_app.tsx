@@ -11,6 +11,7 @@ import Header from '../components/templates/Header';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/ReactToastify.min.css";
 import { MetaMaskUIProvider } from '@metamask/sdk-react-ui';
+import Footer from '../components/templates/Footer';
 // Amplify.configure(awsExports);
 
 // function MyApp({ Component, pageProps }: AppProps) {
@@ -47,7 +48,7 @@ function App({ Component,
                   <Component className={s.Container} {...pageProps} />
                   {/* <Component style={s.Container} {...pageProps} /> */}
                 </div>
-                {/* <Footer /> */} 
+                <Footer /> 
               </PersistGate>
 
           </Provider>

@@ -1,4 +1,5 @@
 export type OrderInfo = {
+  id: string,
   amount: string,
   status: string,
   wallet: string,
@@ -26,5 +27,6 @@ export type RequestEditOrder = {
 
 export type State = {
   listOrder: Array<OrderInfo> | [],
-  order: OrderInfo | null
+  order: OrderInfo | null, 
+  token: string | ""
 }

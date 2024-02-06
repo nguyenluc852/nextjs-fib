@@ -6,6 +6,7 @@ import FormBlock from "../../molecules/FormBlock"
 import { ChangeEvent, useState } from "react"
 import Button from "../../atom/Button"
 import ButtonOutline from "../../atom/ButtonOutline"
+import PullDown from "../../molecules/PullDown"
 // 確認ポップアップ
 
 type Props = {
@@ -20,7 +21,6 @@ type Props = {
   id?: string // 各ポップアップ区別のため、ポップアップのidを渡すべき
   type: "primary" | "danger" | "success"
   isOpen: boolean
-  oldPrice: string
   isLoading?: boolean
 }
 
@@ -35,7 +35,7 @@ const customStyles = {
   },
 };
 
-const UpdatePriceModal: React.FC<Props> = props => {
+const UpdateStatusModal: React.FC<Props> = props => {
   const {className,
     id,
     title,
@@ -45,16 +45,15 @@ const UpdatePriceModal: React.FC<Props> = props => {
     lblClose,
     lblConfirm,
     isLoading,
-    oldPrice,
     onClose,
     onSave,
    } = props
     
-  const [newPrice, setNewPrice] = useState ("0")
+  const [status, setStatus] = useState ("0")
+  const listStatus = ["Order Thành Công", "Đã Chuyển Thành Công"]
 
-  const onChangeNewPrice = (e:ChangeEvent) => {
-    const target = e.target as HTMLInputElement
-    setNewPrice(target.value)
+  const onChangeStatus = (value: string) => {
+    setStatus(value)
   }
   return (
     <div className={c(className)} >
@@ -73,22 +72,13 @@ const UpdatePriceModal: React.FC<Props> = props => {
             <p className="text-sm text-gray-500">
               {message}
             </p>
-            <FormBlock 
-                className="flex flex-row min-w-full grid grid-cols-12 mt-10" 
-                labelClassName=" ml-2 col-span-5 sm:col-span-2 mt-2" 
-                formClassName="col-span-6 sm:col-span-3"
-                label={"Giá Cũ : "}
-                isDisable={true}
-                value={oldPrice}
-                placeholder={"3000000(vnd)"} explain={""} />
-              <FormBlock 
-                className="flex flex-row min-w-full grid grid-cols-12 mt-5" 
-                labelClassName=" ml-2 col-span-5 sm:col-span-2 mt-2" 
-                formClassName="col-span-6 sm:col-span-3" 
-                label={"Giá Mới : "}
-                value={newPrice}
-                onChange={onChangeNewPrice}
-                placeholder={"Nhập Giá Mới"} explain={""} />
+            <div className="flex flex-row mt-3 grid grid-cols-12 mt-10">
+              <PullDown className="flex flex-row col-span-12 sm:col-span-5"  
+                label={"Trạng Thái: "} 
+                value= {status}
+                onChange={onChangeStatus}
+                list={listStatus} />
+            </div>
             
           </div>
         </div>
@@ -97,7 +87,7 @@ const UpdatePriceModal: React.FC<Props> = props => {
           className="ml-3 text-sm " name={"Cập Nhập"} 
           isDisable={isLoading}
           isLoading={isLoading}
-          onClick={()=>onSave(newPrice)} type={"primary"}/>
+          onClick={()=>onSave(status)} type={"primary"}/>
           <ButtonOutline className="ml-3 text-sm "name={"Hủy"}  onClick={onClose} type={"danger"}/>
         </div>
       </Modal>
@@ -105,4 +95,4 @@ const UpdatePriceModal: React.FC<Props> = props => {
   )
 }
 
-export default UpdatePriceModal
+export default UpdateStatusModal

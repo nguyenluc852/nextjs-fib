@@ -22,19 +22,7 @@ const solutions: any[] = [
     description: 'Get a better understanding of where your traffic is coming from.',
     href: '/home',
     icon: ChartBarIcon,
-  },
-  {
-    name: 'Sản Phẩm',
-    description: 'Speak directly to your customers in a more meaningful way.',
-    href: '/order',
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: 'Lộ Trình',
-    description: 'Speak directly to your customers in a more meaningful way.',
-    href: '#',
-    icon: XMarkIcon,
-  },
+  }
 ]
 
 type Props = {
@@ -93,13 +81,13 @@ const Header = (props: Props) => {
             </Popover.Group>
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
               
-              {/* <Link
-                href="/signup"
-                key={"signup"}
+              <Link
+                href="/login"
+                key={"login"}
                 className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
               >
-                Connect Wallet
-              </Link> */}
+                Login
+              </Link>
               {/* <MetaMaskButton theme={"light"} color="white"></MetaMaskButton> */}
             </div>
           </div>
@@ -143,12 +131,12 @@ const Header = (props: Props) => {
                 
                 <div>
                   
-                  {/* <p className="mt-6 text-center text-base font-medium text-gray-500">
+                  <p className="mt-6 text-center text-base font-medium text-gray-500">
                     Existing customer?{' '}
-                    <Link href="#" key={"signInMobile"} className="text-indigo-600 hover:text-indigo-500">
-                      Connect Wallet
+                    <Link href="/login" key={"signInMobile"} className="text-indigo-600 hover:text-indigo-500">
+                      Login
                     </Link>
-                  </p> */}
+                  </p>
                   {/* <MetaMaskButton theme={"light"} color="white"></MetaMaskButton> */}
                 </div>
               </div>

@@ -23,7 +23,7 @@ export const view = (useService: UseService) => {
             <div className="mx-auto text-center xl:text-left xl:mx-0 mb-20 xl:mb-0">
                 <h1 className="font-bold text-gray-700 text-3xl md:text-6xl leading-tight mb-10">Token FIB</h1>
 
-                <p className="font-normal text-gray-500 text-sm md:text-lg mb-10">Token FIB (tên đầy đủ là Financial Broker) là một token được tạo ra trên nền tảng Binance Smart Chain (BSC) nhằm giải quyết nhu cầu kết nối giữa khách hàng và các tổ chức tài chính chuyên nghiệp toàn cầu.</p>
+                <p className="font-normal text-gray-500 text-sm md:text-lg mb-10">Token FIB (the full name is Financial Broker) is a token created to address the need for connectivity between customers and professional financial organizations globally. Below are some details about the FIB token, including its value and operation:</p>
 
                 <div className="flex items-center justify-center lg:justify-start">
                     <a href="#" className="px-8 py-3 bg-green-500 font-medium text-white text-md md:text-lg rounded-md hover:bg-green-700 transition ease-in-out duration-300 mr-14">Our story</a>
@@ -31,7 +31,7 @@ export const view = (useService: UseService) => {
                 </div>
             </div>
             <div className="mx-auto xl:mx-0">
-              <img src="/home-img.svg" alt="Image"></img>
+              <img src="/home-img.jpg" alt="Image"></img>
             {/* <Image path="/home-img.svg" alt="Image" width={au} height={100}/> */}
             </div>
           </div>
@@ -48,9 +48,9 @@ export const view = (useService: UseService) => {
                         </div>
                     </div>
 
-                    <h2 className="font-semibold text-gray-700 text-xl md:text-3xl mb-5">Kết nối</h2>
+                    <h2 className="font-semibold text-gray-700 text-xl md:text-3xl mb-5">Connectivity</h2>
 
-                    <p className="font-normal text-gray-400 text-sm md:text-lg">Token FIB cung cấp một cách kết nối dễ dàng và an toàn giữa khách hàng và các tổ chức tài chính chuyên nghiệp trên toàn cầu. Nó tạo ra một môi trường trao đổi thông tin, dịch vụ và tài sản một cách nhanh chóng và tiện lợi.</p>
+                    <p className="font-normal text-gray-400 text-sm md:text-lg">The FIB token provides an easy and secure way to connect customers with professional financial organizations globally. It creates an environment for the exchange of information, services, and assets quickly and conveniently.</p>
                 </div>
 
                 <div className="text-center mb-10 md:mb-0">
@@ -60,9 +60,9 @@ export const view = (useService: UseService) => {
                         </div>
                     </div>
 
-                    <h2 className="font-semibold text-gray-700 text-xl md:text-3xl mb-5">Tính thanh khoản</h2>
+                    <h2 className="font-semibold text-gray-700 text-xl md:text-3xl mb-5">Liquidity</h2>
 
-                    <p className="font-normal text-gray-400 text-sm md:text-lg">FIB token cung cấp tính thanh khoản cao, cho phép các giao dịch nhanh chóng và dễ dàng trên mạng lưới Binance Smart Chain. Người dùng có thể mua, bán hoặc trao đổi FIB token với các token khác hoặc tiền tệ truyền thống.</p>
+                    <p className="font-normal text-gray-400 text-sm md:text-lg">The FIB token offers high liquidity, enabling fast and easy transactions on the Binance Smart Chain network. Users can buy, sell, or exchange FIB tokens with other tokens or traditional currencies.</p>
                 </div>
 
                 <div className="text-center">
@@ -72,9 +72,9 @@ export const view = (useService: UseService) => {
                         </div>
                     </div>
 
-                    <h2 className="font-semibold text-gray-700 text-xl md:text-3xl mb-5">Quyền sở hữu và ưu đãi</h2>
+                    <h2 className="font-semibold text-gray-700 text-xl md:text-3xl mb-5">Ownership rights and benefits</h2>
 
-                    <p className="font-normal text-gray-400 text-sm md:text-lg">Việc sở hữu Token FIB có thể mang lại cho người dùng quyền lợi và ưu đãi đặc biệt từ các tổ chức tài chính chuyên nghiệp, bao gồm lợi suất cao, chiết khấu hoặc quyền truy cập vào các sản phẩm và dịch vụ độc quyền.</p>
+                    <p className="font-normal text-gray-400 text-sm md:text-lg">Owning FIB tokens can provide users with special rights and benefits from professional financial organizations, including high-interest rates, discounts, or access to exclusive products and services.</p>
                 </div>
               </div>
 
@@ -87,17 +87,17 @@ export const view = (useService: UseService) => {
 
             <div className="container max-w-screen-xl mx-auto px-4">
 
-              <h1 className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">Cách thức hoạt động của Token FIB</h1>
+              <h1 className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">Operation of the FIB Token</h1>
 
               <div className="flex flex-col xl:flex-row items-center justify-between mb-20 md:mb-40">
-                  <div className="mx-auto xl:mx-0 mb-20 xl:mb-0">
-                      <img src="/image-1.svg" alt="Image"/>
+                  <div className="mx-auto xl:mx-10 mb-20 xl:mb-10 my-0.5 w-2/3 h-2/3">
+                      <img src="/image-1.jpg" alt="Image"/>
                   </div>
 
-                  <div className="mx-auto xl:mx-0 text-center xl:text-left">
-                      <h1 className="font-bold text-gray-700 text-3xl md:text-4xl mb-10">Phát hành</h1>
+                  <div className="mx-auto ml-10 xl:mx-0 text-center xl:text-left">
+                      <h1 className="font-bold text-gray-700 text-3xl md:text-4xl mb-10">Issuance</h1>
 
-                      <p className="font-normal text-gray-400 text-sm md:text-lg mb-5">Token FIB được phát hành ban đầu trên mạng lưới Binance Smart Chain thông qua quá trình phát hành và phân phối được quy định trước. Người dùng có thể mua FIB token từ các sàn giao dịch hoặc từ các tổ chức tài chính chuyên nghiệp tham gia trong mạng lưới.</p>
+                      <p className="font-normal text-gray-400 text-sm md:text-lg mb-5">The FIB token is initially issued on the Binance Smart Chain network through a predetermined issuance and distribution process. Users can purchase FIB tokens from exchanges or from professional financial organizations participating in the network.</p>
 
                       <a href="#" className="flex items-center justify-center xl:justify-start font-semibold text-green-500 text-lg gap-3 hover:text-green-700 transition ease-in-out duration-300">
                           See more
@@ -108,9 +108,9 @@ export const view = (useService: UseService) => {
 
               <div className="flex flex-col xl:flex-row items-center justify-between mb-20 md:mb-40">
                   <div className="mx-auto xl:mx-0 text-center xl:text-left mb-20 xl:mb-0">
-                      <h1 className="font-bold text-gray-700 text-3xl md:text-4xl mb-10">Giao dịch</h1>
+                      <h1 className="font-bold text-gray-700 text-3xl md:text-4xl mb-10">Trading</h1>
 
-                      <p className="font-normal text-gray-400 text-sm md:text-lg mb-5">Người dùng có thể giao dịch FIB token trên các sàn giao dịch hỗ trợ Binance Smart Chain. Họ có thể mua, bán hoặc trao đổi FIB token với các token khác hoặc tiền tệ truyền thống. Các giao dịch này được thực hiện một cách an toàn và minh bạch trên mạng lưới blockchain của Binance Smart Chain.</p>
+                      <p className="font-normal text-gray-400 text-sm md:text-lg mb-5">Users can trade FIB tokens on exchanges that support the Binance Smart Chain. They can buy, sell, or exchange FIB tokens with other tokens or traditional currencies. These transactions are carried out safely and transparently on the Binance Smart Chain blockchain network.</p>
 
                       <a href="#" className="flex items-center justify-center xl:justify-start font-semibold text-green-500 text-lg gap-3 hover:text-green-700 transition ease-in-out duration-300">
                           See more
@@ -118,20 +118,20 @@ export const view = (useService: UseService) => {
                       </a>
                   </div>
 
-                  <div className="mx-auto xl:mx-0">
-                      <img src="/image-2.svg" alt="Image"/>
+                  <div className="mx-auto xl:mx-0 w-100 h-100">
+                      <img src="/image-2.jpg" alt="Image" />
                   </div>
               </div>
 
               <div className="flex flex-col xl:flex-row items-center justify-between">
-                  <div className="mx-auto xl:mx-0 mb-20 xl:mb-0">
-                      <img src="/image-3.svg" alt="Image"/>
+                  <div className="mx-auto xl:mx-10 mb-20 xl:mb-0">
+                      <img src="/image-3.jpg" alt="Image"/>
                   </div>
 
                   <div className="mx-auto xl:mx-0 text-center xl:text-left">
-                      <h1 className="font-bold text-gray-700 text-3xl md:text-4xl mb-10">Ứng dụng</h1>
+                      <h1 className="font-bold text-gray-700 text-3xl md:text-4xl mb-10">Application</h1>
 
-                      <p className="font-normal text-gray-400 text-sm md:text-lg mb-5">FIB token có thể được sử dụng để truy cập vào các dịch vụ và sản phẩm của các tổ chức tài chính chuyên nghiệp trong mạng lưới. Điều này có thể bao gồm việc truy cập vào các dịch vụ tài chính, giao dịch, vay mượn, hoặc tham gia vào các hợp đồng thông minh.</p>
+                      <p className="font-normal text-gray-400 text-sm md:text-lg mb-5">FIB tokens can be used to access services and products of professional financial organizations within the network. This may include access to financial services, trading, borrowing, or participation in smart contracts.</p>
 
                       <a href="#" className="flex items-center justify-center xl:justify-start font-semibold text-green-500 text-lg gap-3 hover:text-green-700 transition ease-in-out duration-300">
                           See more
@@ -150,7 +150,7 @@ export const view = (useService: UseService) => {
 
               <h1 className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">Summary</h1>
 
-              <p className="font-normal text-gray-500 text-md md:text-lg text-center mb-20">Token FIB trên nền tảng Binance Smart Chain cung cấp một giải pháp để kết nối khách hàng và các tổ chức tài chính chuyên nghiệp toàn cầu. Với tính thanh khoản cao và quyền sở hữu mang lại ưu đãi, FIB token tạo ra một môi trường kết nối và giao dịch an toàn, tiện lợi và minh bạch trên mạng lưới blockchain.</p>
+              <p className="font-normal text-gray-500 text-md md:text-lg text-center mb-20">the FIB token on the Binance Smart Chain platform provides a solution for connecting customers and professional financial organizations globally. With high liquidity and ownership rights offering benefits, FIB tokens create a safe, convenient, and transparent environment for connection and transactions on the blockchain network.</p>
             </div>
           </section>
 

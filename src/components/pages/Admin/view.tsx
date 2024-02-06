@@ -6,7 +6,6 @@ import {ChangeEvent, useEffect, useState} from "react";
 import styles from '../../../../styles/Home.module.css'
 import c from "clsx";
 import s from "./style.module.scss";
-import logo from "../../../../public/favicon.ico"
 import FormBlock from "../../molecules/FormBlock";
 import Button from "../../atom/Button";
 import ButtonOutline from "../../atom/ButtonOutline";
@@ -18,6 +17,20 @@ import { RootState } from "../../../stores";
 import { RequestOrder } from "../../../stores/order/model";
 import { toast } from "react-toastify";
 import DateUtils from "../../../utils/date";
+import {
+  CognitoUserPool,
+  CognitoUser,
+  AuthenticationDetails
+} from "amazon-cognito-identity-js"
+
+import {awsConfiguration} from '../../../../awsConfigution'
+import UpdateStatusModal from "../../organisms/UpdateOrderModal";
+
+const userPool = new CognitoUserPool({
+  UserPoolId: awsConfiguration.UserPoolId,
+  ClientId: awsConfiguration.ClientId,
+
+})
 type Props = {
   className?: string
 }
@@ -31,11 +44,28 @@ export const view = (useService: UseService) => {
     const router = useRouter()
     const [listData, setListData] = useState<Array<Object>>([])
     const [isLoading, setIsLoading] = useState(false)
-    const listColunm = ["Date", "Status", "Wallet", "Amount", "FIB" ]
+    const listColunm = ["Date", "Trạng Thái", "Wallet", "Amount", "FIB" ]
     const listOrderStore = useSelector((state: RootState) => state.order.listOrder)
-    const { createOrder, getListOrder } = useService();
+    const { editOrder, getListOrder } = useService();
+    const [idxEdit, setIdxEdit] = useState(-1)
+    const [idxDelete, setIdxDelete] = useState(-1)
+    const [token, setToken] = useState("")
+    const [isOpen, setIsOpen] = useState(false)
+    const [showModal, setShowModal] = useState(false); 
     useEffect (() => {
-      getListOrder()
+      const cognitoUser = userPool.getCurrentUser()
+      if (cognitoUser) {
+        console.log("user", cognitoUser)
+        if (cognitoUser.getSignInUserSession()?.getAccessToken().getJwtToken() != undefined) {
+          setToken(cognitoUser.getSignInUserSession()?.getAccessToken().getJwtToken()+ "")
+        }
+        getListOrder()
+      } else {
+        router.push({
+          pathname: "/home"
+        })
+      }
+      
     }, [])
 
     useEffect (() => {
@@ -46,7 +76,8 @@ export const view = (useService: UseService) => {
           status : item.status,
           wallet: item.wallet,
           amount: item.amount,
-          quantity: Number(item.quantity).toFixed(2)
+          quantity: item.quantity,
+          actions: "function"
         })
       })
       setListData(list)
@@ -54,19 +85,10 @@ export const view = (useService: UseService) => {
     }, [listOrderStore])
 
     useEffect (() => {
-      let cal = (Number(amount) / price ).toFixed(2)
+      let cal = Number(amount) / price
       return setEstimatedQuantity(cal+ "");
     }, [amount])
 
-    const onChangeAmount = (e: ChangeEvent) => {
-      const target = e.target as HTMLInputElement
-      setAmount(target.value)
-    }
-
-    const onChangeWallet = (e: ChangeEvent) => {
-      const target = e.target as HTMLInputElement
-      setWallet(target.value)
-    }
 
     const onClickOrder = async () => {
       setIsLoading(true)
@@ -77,10 +99,31 @@ export const view = (useService: UseService) => {
         quantity: estimatedQuantity
       }
       console.log(order)
-      await createOrder(order)
+      // await createOrder(order)
       setIsLoading(false)
-      toast.success('You have been ordered successful.')
+      toast.success('Bạn Đã Order Thành Công.')
       await getListOrder()
+    }
+
+    const onClickEditOrder = (idx: number) => {
+      setIdxEdit(idx)
+      setIsOpen(true)
+    }
+
+    const onClickDeleteOrder = (idx: number) => {
+      // setShowModal(true)
+      setIdxEdit(idx)
+    }
+
+    const onEditSumit = async (status: string) => {
+      console.log(status)
+      setIsOpen(false)
+      let order =  {
+        id : listOrderStore[idxEdit].id,
+        status : status
+      } 
+      console.log(order)
+      await editOrder(order, token)
     }
    
 
@@ -100,40 +143,10 @@ export const view = (useService: UseService) => {
                 priority
               />
               <h3 className="d-flex flex-row sm:flex-col left ml-2"><i className="bi bi-filetype-csv me-1"></i>
-                ~ 0.015USDT</h3>
+                ~ 0.015$</h3>
             </div>
           </div>
 
-          <div className="flex flex-col mb-3 sm:ml-24 mt-10 ">
-            <div className="flex flex-row">
-              <FormBlock 
-                className="flex flex-row" 
-                formClassName="flex-1" 
-                label={"Amount: "} 
-                value={amount}
-                onChange={onChangeAmount}
-                placeholder={"Input amount"} explain={""} ></FormBlock>
-              <Label text="USDT" className="justify-center mt-1"></Label>
-              <ButtonOutline className="ml-2" name="100$" onClick={()=> setAmount("100")} type="primary"></ButtonOutline>
-              <ButtonOutline className="ml-2" name="250$" onClick={()=> setAmount("250")} type="primary"></ButtonOutline>
-              <ButtonOutline className="ml-2" name="500$" onClick={()=> setAmount("500")} type="primary"></ButtonOutline>
-            </div>
-            <div className="flex flex-row mt-2">
-              <FormBlock 
-                className="flex flex-row" 
-                formClassName="flex-2" 
-                label={"Wallet BSC: "} 
-                value={wallet }
-                onChange={onChangeWallet}
-                placeholder={"Input wallet BSC"} explain={""}
-                ></FormBlock>
-            </div>
-            <Label className="ml-2 mt-2" text={"FIB estimate:   " + estimatedQuantity + "  FIB"}/>
-            <Button className="ml-2 mt-2 w-40" type="primary" name="Order" 
-              onClick={onClickOrder}
-              isDisable={isLoading}
-              isLoading= {isLoading} />
-          </div>
 
           <div className="flex flex-col mb-3 sm:ml-24 mt-10 ">
 
@@ -143,9 +156,22 @@ export const view = (useService: UseService) => {
             listColunm={listColunm} 
             listData= {listData}
             isDetailButton = {false}
+            onClickEdit = {onClickEditOrder}
+            isDeleteButton={true}
+            onClickDelete ={onClickDeleteOrder}
             ></Table>
 
           </div>
+
+          <UpdateStatusModal 
+            title={"Update order"} 
+            lblClose={""} 
+            lblConfirm={""} 
+            onClose={() => setIsOpen(false)} 
+            onSave={onEditSumit} 
+            isLoading={isLoading}
+            type={"primary"} 
+            isOpen={isOpen}/>
         </div>
       </div>
     </main>

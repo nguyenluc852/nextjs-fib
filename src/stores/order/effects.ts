@@ -26,3 +26,8 @@ export const fetchCreateOrder = (param: RequestOrder): AsyncAction => async () =
   console.log("res", response)
   return response
 }
+
+export const fetchSetToken = (token: string): AsyncAction => async dispatch => {
+  
+  dispatch(actions.setAccesToken(token))
+}
