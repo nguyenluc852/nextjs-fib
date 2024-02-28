@@ -34,8 +34,18 @@ export const view = (useService: UseService) => {
     const listColunm = ["Date", "Status", "Wallet", "Amount", "FIB" ]
     const listOrderStore = useSelector((state: RootState) => state.order.listOrder)
     const { createOrder, getListOrder } = useService();
+    const userStore = useSelector((state: RootState) => state.user)
     useEffect (() => {
-      getListOrder()
+      if (userStore.userInfo?.token) {
+        // console.log("tokennn dasdas", userStore.userInfo?.token)
+        
+        getListOrder(userStore.userInfo.token)
+      } else {
+        router.push({
+          pathname: "/home"
+        })
+      }
+        
     }, [])
 
     useEffect (() => {
@@ -69,18 +79,23 @@ export const view = (useService: UseService) => {
     }
 
     const onClickOrder = async () => {
-      setIsLoading(true)
-      const order: RequestOrder = {
-        price: price+"",
-        wallet: wallet,
-        amount: amount,
-        quantity: estimatedQuantity
+      if (userStore.userInfo?.token) {
+        setIsLoading(true)
+        const order: RequestOrder = {
+          price: price+"",
+          wallet: wallet,
+          amount: amount,
+          quantity: estimatedQuantity
+        }
+        console.log(order)
+        
+        await createOrder(order, userStore.userInfo.token)
+        setIsLoading(false)
+        toast.success('You have been ordered successful.')
+        
+        await getListOrder(userStore.userInfo.token)
       }
-      console.log(order)
-      await createOrder(order)
-      setIsLoading(false)
-      toast.success('You have been ordered successful.')
-      await getListOrder()
+      
     }
    
 

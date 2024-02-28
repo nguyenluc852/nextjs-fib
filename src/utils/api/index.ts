@@ -56,8 +56,8 @@ class ApiClient {
   static requestFailure(error: AxiosError) {
     
     console.log("// REQUEST FAILURE", {error})
-    if (error.response?.status === 403) {
-      alert("セッションの有効期限が切れました。再度ログインしてください。")
+    if (error.response?.status === 403 || error.response?.status === 401) {
+      alert("Session have been expired. Please re-login!!!")
       location.href = `${process.env.NEXT_PUBLIC_APP_LOGIN_DOMAIN}/login`
     }
     return Promise.reject(error.response)

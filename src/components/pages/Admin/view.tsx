@@ -27,8 +27,8 @@ import {awsConfiguration} from '../../../../awsConfigution'
 import UpdateStatusModal from "../../organisms/UpdateOrderModal";
 
 const userPool = new CognitoUserPool({
-  UserPoolId: awsConfiguration.UserPoolId,
-  ClientId: awsConfiguration.ClientId,
+  UserPoolId: awsConfiguration.UserPoolId+"",
+  ClientId: awsConfiguration.ClientId+"",
 
 })
 type Props = {
@@ -44,8 +44,9 @@ export const view = (useService: UseService) => {
     const router = useRouter()
     const [listData, setListData] = useState<Array<Object>>([])
     const [isLoading, setIsLoading] = useState(false)
-    const listColunm = ["Date", "Trạng Thái", "Wallet", "Amount", "FIB" ]
+    const listColunm = ["Date", "Status", "Wallet", "Amount", "FIB" ]
     const listOrderStore = useSelector((state: RootState) => state.order.listOrder)
+    const userStore = useSelector((state: RootState) => state.user)
     const { editOrder, getListOrder } = useService();
     const [idxEdit, setIdxEdit] = useState(-1)
     const [idxDelete, setIdxDelete] = useState(-1)
@@ -53,20 +54,21 @@ export const view = (useService: UseService) => {
     const [isOpen, setIsOpen] = useState(false)
     const [showModal, setShowModal] = useState(false); 
     useEffect (() => {
-      const cognitoUser = userPool.getCurrentUser()
-      if (cognitoUser) {
-        console.log("user", cognitoUser)
-        if (cognitoUser.getSignInUserSession()?.getAccessToken().getJwtToken() != undefined) {
-          setToken(cognitoUser.getSignInUserSession()?.getAccessToken().getJwtToken()+ "")
-        }
-        getListOrder()
+      
+      if (userStore.userInfo?.isAdmin === "1") {
+        // const cognitoUser = userPool.getCurrentUser()
+        console.log("user", userStore.userInfo?.token)
+        // if (cognitoUser.getSignInUserSession()?.getAccessToken().getJwtToken() != undefined) {
+        //   setToken(cognitoUser.getSignInUserSession()?.getAccessToken().getJwtToken()+ "")
+        // }
+        getListOrder(userStore.userInfo.token)
       } else {
         router.push({
           pathname: "/home"
         })
       }
       
-    }, [])
+    }, [userStore])
 
     useEffect (() => {
       const list: Array<Object> = []
@@ -89,22 +91,6 @@ export const view = (useService: UseService) => {
       return setEstimatedQuantity(cal+ "");
     }, [amount])
 
-
-    const onClickOrder = async () => {
-      setIsLoading(true)
-      const order: RequestOrder = {
-        price: price+"",
-        wallet: wallet,
-        amount: amount,
-        quantity: estimatedQuantity
-      }
-      console.log(order)
-      // await createOrder(order)
-      setIsLoading(false)
-      toast.success('Bạn Đã Order Thành Công.')
-      await getListOrder()
-    }
-
     const onClickEditOrder = (idx: number) => {
       setIdxEdit(idx)
       setIsOpen(true)
@@ -123,7 +109,12 @@ export const view = (useService: UseService) => {
         status : status
       } 
       console.log(order)
-      await editOrder(order, token)
+      if (userStore.userInfo?.token) {
+        await editOrder(order, userStore.userInfo.token)
+        toast.success('You have been changed status succesfully.')
+        await getListOrder(userStore.userInfo?.token)
+      }
+        
     }
    
 

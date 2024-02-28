@@ -7,12 +7,12 @@ export type UseService = typeof useService
 
 export const useService = () => {
   const dispatch = useDispatch()
-  const getListOrder = async () =>{
-    return dispatch(fetchListOrder() as unknown as AnyAction)
+  const getListOrder = async (token: String) =>{
+    return dispatch(fetchListOrder(token) as unknown as AnyAction)
   }
 
-  const createOrder = async (request: RequestOrder) => {
-    return dispatch(fetchCreateOrder(request) as unknown as AnyAction)
+  const createOrder = async (request: RequestOrder, token: String) => {
+    return dispatch(fetchCreateOrder(request, token) as unknown as AnyAction)
   }
 
   return {getListOrder, createOrder}

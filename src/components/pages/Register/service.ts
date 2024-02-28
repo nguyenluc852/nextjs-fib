@@ -2,8 +2,8 @@ import { useDispatch } from "react-redux"
 import { AnyAction } from "redux"
 import { fetchCreateOrder, fetchListOrder, fetchSetToken } from "../../../stores/order/effects"
 import { RequestOrder } from "../../../stores/order/model"
-import { fetchSetUser } from "../../../stores/user/effects"
 import { UserInfo } from "../../../stores/user/model"
+import { fetchSetUser } from "../../../stores/user/effects"
 
 export type UseService = typeof useService
 

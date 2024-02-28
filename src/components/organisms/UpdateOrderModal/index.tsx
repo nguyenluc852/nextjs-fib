@@ -50,7 +50,7 @@ const UpdateStatusModal: React.FC<Props> = props => {
    } = props
     
   const [status, setStatus] = useState ("0")
-  const listStatus = ["Order Thành Công", "Đã Chuyển Thành Công"]
+  const listStatus = ["Order Success", "Sent"]
 
   const onChangeStatus = (value: string) => {
     setStatus(value)
@@ -74,7 +74,7 @@ const UpdateStatusModal: React.FC<Props> = props => {
             </p>
             <div className="flex flex-row mt-3 grid grid-cols-12 mt-10">
               <PullDown className="flex flex-row col-span-12 sm:col-span-5"  
-                label={"Trạng Thái: "} 
+                label={"Status: "} 
                 value= {status}
                 onChange={onChangeStatus}
                 list={listStatus} />

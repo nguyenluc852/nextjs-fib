@@ -50,10 +50,10 @@ const Table: React.FC<Props> = (props) => {
         case 'Hủy đặt cọc':
           return <span className={c("text-truncate font-bold flex items-center text-red-500", s.textTruncate)}>{data} </span>
         case 'Đã Thanh Toán':
-        case '1':
-          return <span className={c("text-truncate font-bold flex items-center text-blue-500", s.textTruncate)}>{"Đã Chuyển Thành Công"} </span>
+        case 'Sent':
+          return <span className={c("text-truncate font-bold flex items-center text-blue-500", s.textTruncate)}>{"Sent"} </span>
         default:
-          return <span className={c("text-truncate font-bold flex items-center text-green-500", s.textTruncate)}>{"Order Thành Công"} </span>
+          return <span className={c("text-truncate font-bold flex items-center text-green-500", s.textTruncate)}>{"Order Success"} </span>
       }
       return 
     } else {
@@ -83,15 +83,6 @@ const Table: React.FC<Props> = (props) => {
                     return <td key={i} className={c("text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap")} >
                       {
                         row(e[0], e[1], idx)
-                        // e[0] == "actions" ? 
-                        //   <div className="flex row">
-                        //     <Button name={"Sửa"}  onClick={()=> onClickEdit?.(idx)} type={"primary"}></Button>
-                        //     {isDeleteButton && <Button className="mx-2" name={"Xóa"}  onClick={()=> onClickDelete?.(idx)} type={"danger"}></Button>}
-                        //     {isDetailButton && <ButtonOutline className="mx-2" name={"Chi Tiết"}  onClick={()=> onClickDetail?.(idx)} type={"primary"}></ButtonOutline>}
-                        //     {isDetailInvoiceButton && <ButtonOutline className="mx-2" name={"Chi Tiết Hóa Đơn"}  onClick={()=> onClickDetailInvoice?.(idx)} type={"primary"}></ButtonOutline>}
-                        //   </div>
-                        // :
-                        //   <span className={c("text-truncate flex items-center", s.textTruncate)}>{e[1]} </span>
                       }
                       
                     </td>
