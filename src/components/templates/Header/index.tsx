@@ -37,7 +37,7 @@ const solutions: any[] = [
   {
     name: 'AboutUs',
     description: 'Get a better understanding of where your traffic is coming from.',
-    hrefHd: '/home',
+    hrefHd: '/',
     icon: ChartBarIcon,
   }
 ]
@@ -87,7 +87,7 @@ const Header = () => {
         {
           name: 'AboutUs',
           description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/home',
+          hrefHd: '/',
           icon: ChartBarIcon,
         },{
           name: 'Product',
@@ -103,45 +103,25 @@ const Header = () => {
       ])
     }
   }, [userStore])
-  useEffect(() => {
-    if (isLogout) {
-      const cognitoUser = userPool.getCurrentUser()
-      if (cognitoUser)
-        cognitoUser.getSession((err:any, result:any)=>{
-          if(result){
-            // cognitoUser.globalSignOut({
-            //   onSuccess: (result) => {
-            //     //success
-            //     dispatch(fetchRemoveUser() as unknown as AnyAction)
-            //     // removeUser()
-            //     router.push({
-            //       pathname: "/login"
-            //     })
-            //   },
-            //   onFailure: (err) => {
-            //     //err;
-
-            //     console.log(err.message || JSON.stringify(err));
-            //   },
-            // });
-            
-            cognitoUser.signOut()
-            dispatch(fetchRemoveUser() as unknown as AnyAction)
-                // removeUser()
-            router.push({
-              pathname: "/login"
-            })
-          }
-        });
-      
-        
-    }
-  },[isLogout]) 
 
   const onClickLogout = async () => {
     
-    setIsLogout(true)
+    signOut()
   }
+
+  const signOut = () => {
+    const cognitoUser = userPool.getCurrentUser();
+    // console.log("Lougout ", cognitoUser)
+    if (cognitoUser != null) {
+      console.log("Lougout ", cognitoUser)
+      cognitoUser.signOut();
+      dispatch(fetchRemoveUser() as unknown as AnyAction)
+      router.push({
+        pathname: "/login"
+      })
+    }
+
+  };
   
   
   return (

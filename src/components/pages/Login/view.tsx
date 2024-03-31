@@ -1,5 +1,6 @@
 import type { UseService } from "./service"
 import type {NextPage} from "../../../types/nextjs";
+import * as AWS from "aws-sdk/global";
 
 import { useRouter } from "next/router"
 import {ChangeEvent, useEffect, useState} from "react";
@@ -61,7 +62,8 @@ export const view = (useService: UseService) => {
       if (cognitoUser1) {
         
         cognitoUser1.getSession(function (err: any, session: any){
-          var token = session.getIdToken().getJwtToken()
+          var token = session.getAccessToken().getJwtToken()
+          const idToken = session.getIdToken().getJwtToken()
           console.log("login token", token)
           cognitoUser1.getUserAttributes(function(err, result) {
             if (err) {
@@ -74,7 +76,7 @@ export const view = (useService: UseService) => {
                 user = {
                   email: email,
                   isAdmin: attribute.Value,
-                  token: token
+                  token: idToken
                 }
                 setUser(user)
               }
@@ -92,7 +94,8 @@ export const view = (useService: UseService) => {
           onSuccess: (result) => {
             
             const accessToken = result.getAccessToken().getJwtToken()
-            console.log("login access token", accessToken)
+            const idToken = result.getIdToken().getJwtToken()
+            console.log("login id token", idToken)
             cognitoUser.getSession(function (err: any, session: any){
               cognitoUser.getUserAttributes(function(err, result) {
                 if (err) {
@@ -105,13 +108,31 @@ export const view = (useService: UseService) => {
                     user = {
                       email: email,
                       isAdmin: attribute.Value,
-                      token: accessToken
+                      token: idToken
                     }
                     setUser(user)
                   }
                 })
+
+                // AWS.config.region = "ap-southeast-1"
+                // AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+                //   IdentityPoolId: process.env.NEXT_PUBLIC_IDENTITY_POOL_ID+"", // your identity pool id here
+                //   Logins: {
+                //     // Change the key below according to the specific region your user pool is in.
+                //     'cognito-idp.ap-southeast-1.amazonaws.com/ap-southeast-1_VwzwwNwJE': idToken,
+                //   },
+                // })
+                // AWS.config.credentials.refresh(error => {
+                //   if (error) {
+                //     console.error(error);
+                //   } else {
+                //     // Instantiate aws sdk service objects now that the credentials have been updated.
+                //     console.log('Successfully logged!');
+                //   }
+                // });
               })
             });
+            
             user.isAdmin === "1" ? router.push({
               pathname: "/admin"
             }) : router.push({

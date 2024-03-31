@@ -10,6 +10,7 @@
     "proxy": "lcp --proxyUrl  https://66rfzmp318.execute-api.ap-southeast-1.amazonaws.com/stg/"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^6.1.6",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@metamask/sdk-react": "^0.14.1",
@@ -22,6 +23,8 @@
     "@types/react-dom": "18.0.10",
     "@types/react-modal": "^3.13.1",
     "amazon-cognito-identity-js": "^6.3.7",
+    "aws-amplify": "^6.0.21",
+    "aws-sdk": "^2.1566.0",
     "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",

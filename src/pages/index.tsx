@@ -154,6 +154,254 @@ export default function Home() {
             </div>
           </section>
 
+
+
+          <div className="flex flex-row">
+            <div className="container max-w-7xl px-4">
+              {/* <!-- Section Header --> */}
+              <div className="flex flex-wrap justify-center text-center mb-24">
+                <div className="w-full lg:w-6/12 px-4">
+                  {/* <!-- Header --> */}
+                  <h1 className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
+                      Our Team
+                  </h1>
+
+                  {/* <!-- Description --> */}
+                  <p className="text-gray-700 text-lg font-light">
+                      
+                  </p>
+
+                  {/* <!-- Team Members --> */}
+                  <div className="flex flex-row">
+                    {/* <!-- Member #1 --> */}
+                    <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div className="flex flex-col">
+                            {/* <!-- Avatar --> */}
+                            <a href="#" className="mx-auto">
+                                <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                    src="/taro.jpg">
+                                </img>
+                            </a>
+
+                            {/* <!-- Details --> */}
+                            <div className="text-center mt-6">
+                                {/* <!-- Name --> */}
+                                <h1 className="text-gray-900 text-xl font-bold mb-1">
+                                    TARO
+                                </h1>
+
+                                {/* <!-- Title --> */}
+                                <div className="text-gray-700 font-light mb-2">
+                                  CEO & CO-founder
+                                </div>
+
+                                {/* <!-- Social Icons --> */}
+                                <div className="flex items-center justify-center opacity-50 hover:opacity-100
+                                transition-opacity duration-300">
+                                    {/* <!-- Linkedin --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                        <i className="mdi mdi-linkedin text-indigo-500 mx-auto mt-2"></i>
+                                    </a>
+
+                                    {/* <!-- Twitter --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                        <i className="mdi mdi-twitter text-blue-300 mx-auto mt-2"></i>
+                                    </a>
+
+                                    {/* <!-- Instagram --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                        <i className="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/* <!-- Member #2 --> */}
+                    <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div className="flex flex-col">
+                            {/* <!-- Avatar --> */}
+                            <a href="#" className="mx-auto">
+                                <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                    src="/yuki.jpg"></img>
+                            </a>
+
+                            {/* <!-- Details --> */}
+                            <div className="text-center mt-6">
+                                {/* <!-- Name --> */}
+                                <h1 className="text-gray-900 text-xl font-bold mb-1">
+                                    TANI YUKI
+                                </h1>
+
+                                {/* <!-- Title --> */}
+                                <div className="text-gray-700 font-light mb-2">
+                                CEO & CO-founder
+                                </div>
+
+                                {/* <!-- Social Icons --> */}
+                                <div className="flex items-center justify-center opacity-50 hover:opacity-100
+                                transition-opacity duration-300">
+                                    {/* <!-- Linkedin --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                        <i className="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
+                                    </a>
+
+                                    {/* <!-- Twitter --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                        <i className="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
+                                    </a>
+
+                                    {/* <!-- Instagram --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                        <i className="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* <!-- Member #3 --> */}
+                    <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div className="flex flex-col">
+                            {/* <!-- Avatar --> */}
+                            <a href="#" className="mx-auto">
+                                <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                    src="/takahashi.jpg"></img>
+                            </a>
+
+                            {/* <!-- Details --> */}
+                            <div className="text-center mt-6">
+                                {/* <!-- Name --> */}
+                                <h1 className="text-gray-900 text-xl font-bold mb-1">
+                                    TAKAHASHI
+                                </h1>
+
+                                {/* <!-- Title --> */}
+                                <div className="text-gray-700 font-light mb-2">
+                                    COO & CO-founder
+                                </div>
+
+                                {/* <!-- Social Icons --> */}
+                                <div className="flex items-center justify-center opacity-50 hover:opacity-100
+                                transition-opacity duration-300">
+                                    {/* <!-- Linkedin --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                        <i className="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
+                                    </a>
+                                    {/* <!-- Twitter --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                        <i className="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
+                                    </a>
+
+                                    {/* <!-- Instagram --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                        <i className="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* <!-- Member #2 --> */}
+                    <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div className="flex flex-col">
+                            {/* <!-- Avatar --> */}
+                            <a href="#" className="mx-auto">
+                                <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                    src="/ito.jpg"></img>
+                            </a>
+
+                            {/* <!-- Details --> */}
+                            <div className="text-center mt-6">
+                                {/* <!-- Name --> */}
+                                <h1 className="text-gray-900 text-xl font-bold mb-1">
+                                    Ito
+                                </h1>
+
+                                {/* <!-- Title --> */}
+                                <div className="text-gray-700 font-light mb-2">
+                                IT Solution
+                                </div>
+
+                                {/* <!-- Social Icons --> */}
+                                <div className="flex items-center justify-center opacity-50 hover:opacity-100
+                                transition-opacity duration-300">
+                                    {/* <!-- Linkedin --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                        <i className="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
+                                    </a>
+
+                                    {/* <!-- Twitter --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                        <i className="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
+                                    </a>
+
+                                    {/* <!-- Instagram --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                        <i className="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* <!-- Member #2 --> */}
+                    <div className="w-full md:w-6/12 lg:w-3/12 mb-6 px-6 sm:px-6 lg:px-4">
+                        <div className="flex flex-col">
+                            {/* <!-- Avatar --> */}
+                            <a href="#" className="mx-auto">
+                                <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
+                                    src="/nakamoto.jpg"></img>
+                            </a>
+
+                            {/* <!-- Details --> */}
+                            <div className="text-center mt-6">
+                                {/* <!-- Name --> */}
+                                <h1 className="text-gray-900 text-xl font-bold mb-1">
+                                    NAKAMOTO
+                                </h1>
+
+                                {/* <!-- Title --> */}
+                                <div className="text-gray-700 font-light mb-2">
+                                Marketing & Community
+                                </div>
+
+                                {/* <!-- Social Icons --> */}
+                                <div className="flex items-center justify-center opacity-50 hover:opacity-100
+                                transition-opacity duration-300">
+                                    {/* <!-- Linkedin --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-indigo-50 h-10 w-10">
+                                        <i className="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
+                                    </a>
+
+                                    {/* <!-- Twitter --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-blue-50 h-10 w-10">
+                                        <i className="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
+                                    </a>
+
+                                    {/* <!-- Instagram --> */}
+                                    <a href="#" className="flex rounded-full hover:bg-orange-50 h-10 w-10">
+                                        <i className="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                  </div>
+
+                    
+                </div>
+              </div>
+            </div>
+          
+
+
+          </div>
+
+
         </div>
       </div>
       </main>
