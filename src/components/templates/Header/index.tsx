@@ -74,6 +74,21 @@ const Header = () => {
           hrefHd: '/',
           icon: ChartBarIcon,
         },{
+          name: 'Vision',
+          description: 'Get a better understanding of where your traffic is coming from.',
+          hrefHd: '/',
+          icon: ChartBarIcon,
+        },{
+          name: 'Overview',
+          description: 'Get a better understanding of where your traffic is coming from.',
+          hrefHd: '/',
+          icon: ChartBarIcon,
+        },{
+          name: 'WhiteBook',
+          description: 'Get a better understanding of where your traffic is coming from.',
+          hrefHd: '/',
+          icon: ChartBarIcon,
+        },{
           name: 'Product',
           description: 'Get a better understanding of where your traffic is coming from.',
           hrefHd: '/order',
@@ -90,7 +105,17 @@ const Header = () => {
           hrefHd: '/',
           icon: ChartBarIcon,
         },{
-          name: 'Product',
+          name: 'Vision',
+          description: 'Get a better understanding of where your traffic is coming from.',
+          hrefHd: '/vision',
+          icon: ChartBarIcon,
+        },{
+          name: 'Overview',
+          description: 'Get a better understanding of where your traffic is coming from.',
+          hrefHd: '/Overview',
+          icon: ChartBarIcon,
+        },{
+          name: 'Whitebook',
           description: 'Get a better understanding of where your traffic is coming from.',
           hrefHd: '/order',
           icon: ChartBarIcon,

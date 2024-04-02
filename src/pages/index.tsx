@@ -30,10 +30,7 @@ export default function Home() {
 
                 </div>
             </div>
-            <div className="mx-auto xl:mx-0">
-              <img src="/home-img.jpg" alt="Image"></img>
-            {/* <Image path="/home-img.svg" alt="Image" width={au} height={100}/> */}
-            </div>
+           
           </div>
         
           <section className="py-8 md:py-16">
@@ -150,7 +147,7 @@ export default function Home() {
 
               <h1 className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">Summary</h1>
 
-              <p className="font-normal text-gray-500 text-md md:text-lg text-center mb-20">the FIB token on the Binance Smart Chain platform provides a solution for connecting customers and professional financial organizations globally. With high liquidity and ownership rights offering benefits, FIB tokens create a safe, convenient, and transparent environment for connection and transactions on the blockchain network.</p>
+              <p className="font-normal text-gray-500 text-md md:text-lg text-center mb-20">The FIB token on the Binance Smart Chain platform provides a solution for connecting customers and professional financial organizations globally. With high liquidity and ownership rights offering benefits, FIB tokens create a safe, convenient, and transparent environment for connection and transactions on the blockchain network.</p>
             </div>
           </section>
 
@@ -179,7 +176,7 @@ export default function Home() {
                             {/* <!-- Avatar --> */}
                             <a href="#" className="mx-auto">
                                 <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                    src="/taro.jpg">
+                                    src="/taro01.jpg">
                                 </img>
                             </a>
 
@@ -224,7 +221,7 @@ export default function Home() {
                             {/* <!-- Avatar --> */}
                             <a href="#" className="mx-auto">
                                 <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                    src="/yuki.jpg"></img>
+                                    src="/Yuki01.jpg"></img>
                             </a>
 
                             {/* <!-- Details --> */}
@@ -267,7 +264,7 @@ export default function Home() {
                             {/* <!-- Avatar --> */}
                             <a href="#" className="mx-auto">
                                 <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                    src="/takahashi.jpg"></img>
+                                    src="/takahashi01.jpg"></img>
                             </a>
 
                             {/* <!-- Details --> */}
@@ -309,7 +306,7 @@ export default function Home() {
                             {/* <!-- Avatar --> */}
                             <a href="#" className="mx-auto">
                                 <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                    src="/ito.jpg"></img>
+                                    src="/Ito01.jpg"></img>
                             </a>
 
                             {/* <!-- Details --> */}
@@ -321,7 +318,7 @@ export default function Home() {
 
                                 {/* <!-- Title --> */}
                                 <div className="text-gray-700 font-light mb-2">
-                                IT Solution
+                                Marketing & Community
                                 </div>
 
                                 {/* <!-- Social Icons --> */}
@@ -352,7 +349,7 @@ export default function Home() {
                             {/* <!-- Avatar --> */}
                             <a href="#" className="mx-auto">
                                 <img className="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                                    src="/nakamoto.jpg"></img>
+                                    src="/namakoto01.jpg"></img>
                             </a>
 
                             {/* <!-- Details --> */}
@@ -364,7 +361,8 @@ export default function Home() {
 
                                 {/* <!-- Title --> */}
                                 <div className="text-gray-700 font-light mb-2">
-                                Marketing & Community
+                                IT Solution
+
                                 </div>
 
                                 {/* <!-- Social Icons --> */}
