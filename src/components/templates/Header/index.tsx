@@ -74,6 +74,26 @@ const Header = () => {
           hrefHd: '/',
           icon: ChartBarIcon,
         },{
+          name: 'Ecosystem',
+          description: 'Get a better understanding of where your traffic is coming from.',
+          hrefHd: '/ecosystem',
+          icon: ChartBarIcon,
+        },{
+          name: 'Vision',
+          description: 'Get a better understanding of where your traffic is coming from.',
+          hrefHd: '/vision',
+          icon: ChartBarIcon,
+        },{
+          name: 'Overview',
+          description: 'Get a better understanding of where your traffic is coming from.',
+          hrefHd: '/overview',
+          icon: ChartBarIcon,
+        },{
+          name: 'WhiteBook',
+          description: 'Get a better understanding of where your traffic is coming from.',
+          hrefHd: '/whitebook',
+          icon: ChartBarIcon,
+        },{
           name: 'Product',
           description: 'Get a better understanding of where your traffic is coming from.',
           hrefHd: '/order',
@@ -88,11 +108,6 @@ const Header = () => {
           name: 'AboutUs',
           description: 'Get a better understanding of where your traffic is coming from.',
           hrefHd: '/',
-          icon: ChartBarIcon,
-        },{
-          name: 'Product',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/order',
           icon: ChartBarIcon,
         },{
           name: 'Admin',
