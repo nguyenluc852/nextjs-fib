@@ -105,8 +105,8 @@ export const view = (useService: UseService) => {
       >
         <div className="responsive">
           <div className="container">
-            {/* Vision */}
-            <div className="mt-5">
+             {/* Vision */}
+             <div className="mt-5">
               <div className="mt-1">
                 <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
                   Vision
@@ -186,7 +186,7 @@ export const view = (useService: UseService) => {
                     </div>
                   </div>
                   <div className="mt-5 ml-[30px]">
-                    <p className=" text-[26px] text-[#FBD786]">
+                    <p className="text-[26px] text-[#FBD786]">
                       The vision of FIB token is to connect customers with
                       professional financial institutions globally through a
                       decentralized, secure and innovative financial ecosystem.
@@ -358,10 +358,10 @@ export const view = (useService: UseService) => {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
-      </main>
-   
+      </main>   
     </main>
   }
   return Home
