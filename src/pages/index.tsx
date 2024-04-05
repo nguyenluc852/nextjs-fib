@@ -150,7 +150,11 @@ export default function Home() {
 
               <h1 className="font-semibold text-neutral-50 text-3xl md:text-4xl text-center mb-5">Summary</h1>
 
+<<<<<<< HEAD
               <p className="font-normal text-gray-200 text-md md:text-lg text-center mb-20">The FIB token on the Binance Smart Chain platform provides a solution for connecting customers and professional financial organizations globally. With high liquidity and ownership rights offering benefits, FIB tokens create a safe, convenient, and transparent environment for connection and transactions on the blockchain network.</p>
+=======
+              <p className="font-normal text-gray-500 text-md md:text-lg text-center mb-20">The FIB token on the Binance Smart Chain platform provides a solution for connecting customers and professional financial organizations globally. With high liquidity and ownership rights offering benefits, FIB tokens create a safe, convenient, and transparent environment for connection and transactions on the blockchain network.</p>
+>>>>>>> 86ee87415e39e74fd4080643b48deede2221d06f
             </div>
           </section>
 
@@ -320,7 +324,11 @@ export default function Home() {
                                 </h1>
 
                                 {/* <!-- Title --> */}
+<<<<<<< HEAD
                                 <div className="text-gray-400 font-light mb-2">
+=======
+                                <div className="text-gray-700 font-light mb-2">
+>>>>>>> 86ee87415e39e74fd4080643b48deede2221d06f
                                 Marketing & Community
                                 </div>
 
@@ -363,7 +371,11 @@ export default function Home() {
                                 </h1>
 
                                 {/* <!-- Title --> */}
+<<<<<<< HEAD
                                 <div className="text-gray-400 font-light mb-2">
+=======
+                                <div className="text-gray-700 font-light mb-2">
+>>>>>>> 86ee87415e39e74fd4080643b48deede2221d06f
                                 IT Solution
 
                                 </div>
