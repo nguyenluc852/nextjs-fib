@@ -134,14 +134,7 @@ export const view = (useService: UseService) => {
               <ButtonOutline className="ml-2" name="500$" onClick={()=> setAmount("500")} type="primary"></ButtonOutline>
             </div>
             <div className="flex flex-row mt-2">
-              <FormBlock 
-                className="flex flex-row" 
-                formClassName="flex-2" 
-                label={"Wallet BSC: "} 
-                value={wallet }
-                onChange={onChangeWallet}
-                placeholder={"Input wallet BSC"} explain={""}
-                ></FormBlock>
+              
             </div>
             <Label className="ml-2 mt-2" text={"FIB estimate:   " + estimatedQuantity + "  FIB"}/>
             <Button className="ml-2 mt-2 w-40" type="primary" name="Order" 

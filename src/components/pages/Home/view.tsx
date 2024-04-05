@@ -17,6 +17,7 @@ export const view = (useService: UseService) => {
     const [isLoading, setIsLoading] = useState(false)
 
     return <main className={c(styles.main)}>
+    
       <div className="responsive">
         <div className="container">
           <div className="sm:ml-20 mt-20 flex-col xl:flex-row flex justify-between">
@@ -30,14 +31,11 @@ export const view = (useService: UseService) => {
 
                 </div>
             </div>
-            <div className="mx-auto xl:mx-0">
-              <img src="/home-img.jpg" alt="Image"></img>
-            {/* <Image path="/home-img.svg" alt="Image" width={au} height={100}/> */}
-            </div>
+    
           </div>
         
           <section className="py-8 md:py-16">
-
+            
             <div className="container max-w-screen-xl mx-auto px-4">
 
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
@@ -85,73 +83,13 @@ export const view = (useService: UseService) => {
 
           <section className="py-8 md:py-16">
 
-            <div className="container max-w-screen-xl mx-auto px-4">
-
-              <h1 className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">Operation of the FIB Token</h1>
-
-              <div className="flex flex-col xl:flex-row items-center justify-between mb-20 md:mb-40">
-                  <div className="mx-auto xl:mx-10 mb-20 xl:mb-10 my-0.5 w-2/3 h-2/3">
-                      <img src="/image-1.jpg" alt="Image"/>
-                  </div>
-
-                  <div className="mx-auto ml-10 xl:mx-0 text-center xl:text-left">
-                      <h1 className="font-bold text-gray-700 text-3xl md:text-4xl mb-10">Issuance</h1>
-
-                      <p className="font-normal text-gray-400 text-sm md:text-lg mb-5">The FIB token is initially issued on the Binance Smart Chain network through a predetermined issuance and distribution process. Users can purchase FIB tokens from exchanges or from professional financial organizations participating in the network.</p>
-
-                      <a href="#" className="flex items-center justify-center xl:justify-start font-semibold text-green-500 text-lg gap-3 hover:text-green-700 transition ease-in-out duration-300">
-                          See more
-                          <i data-feather="chevron-right"></i>
-                      </a>
-                  </div>
-              </div>
-
-              <div className="flex flex-col xl:flex-row items-center justify-between mb-20 md:mb-40">
-                  <div className="mx-auto xl:mx-0 text-center xl:text-left mb-20 xl:mb-0">
-                      <h1 className="font-bold text-gray-700 text-3xl md:text-4xl mb-10">Trading</h1>
-
-                      <p className="font-normal text-gray-400 text-sm md:text-lg mb-5">Users can trade FIB tokens on exchanges that support the Binance Smart Chain. They can buy, sell, or exchange FIB tokens with other tokens or traditional currencies. These transactions are carried out safely and transparently on the Binance Smart Chain blockchain network.</p>
-
-                      <a href="#" className="flex items-center justify-center xl:justify-start font-semibold text-green-500 text-lg gap-3 hover:text-green-700 transition ease-in-out duration-300">
-                          See more
-                          <i data-feather="chevron-right"></i>
-                      </a>
-                  </div>
-
-                  <div className="mx-auto xl:mx-0 w-100 h-100">
-                      <img src="/image-2.jpg" alt="Image" />
-                  </div>
-              </div>
-
-              <div className="flex flex-col xl:flex-row items-center justify-between">
-                  <div className="mx-auto xl:mx-10 mb-20 xl:mb-0">
-                      <img src="/image-3.jpg" alt="Image"/>
-                  </div>
-
-                  <div className="mx-auto xl:mx-0 text-center xl:text-left">
-                      <h1 className="font-bold text-gray-700 text-3xl md:text-4xl mb-10">Application</h1>
-
-                      <p className="font-normal text-gray-400 text-sm md:text-lg mb-5">FIB tokens can be used to access services and products of professional financial organizations within the network. This may include access to financial services, trading, borrowing, or participation in smart contracts.</p>
-
-                      <a href="#" className="flex items-center justify-center xl:justify-start font-semibold text-green-500 text-lg gap-3 hover:text-green-700 transition ease-in-out duration-300">
-                          See more
-                          <i data-feather="chevron-right"></i>
-                      </a>
-                  </div>
-              </div>
-
-            </div> 
+            
 
           </section>
 
           <section className="py-8 md:py-16">
 
-            <div className="container max-w-screen-xl mx-auto px-4">
-
-              <h1 className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">Summary</h1>
-
-              <p className="font-normal text-gray-500 text-md md:text-lg text-center mb-20">the FIB token on the Binance Smart Chain platform provides a solution for connecting customers and professional financial organizations globally. With high liquidity and ownership rights offering benefits, FIB tokens create a safe, convenient, and transparent environment for connection and transactions on the blockchain network.</p>
-            </div>
+            
           </section>
 
         </div>
