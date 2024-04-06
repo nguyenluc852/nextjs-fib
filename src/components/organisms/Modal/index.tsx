@@ -1,8 +1,7 @@
 import c from "clsx"
 import ButtonModal from "../../atom/ButtonModal"
 import s from "./style.module.scss"
-import Modal from 'react-modal'
-import DateTime from "../../molecules/DateTime"
+import ReactModal from 'react-modal'
 import FormBlock from "../../molecules/FormBlock"
 import { ChangeEvent, useState } from "react"
 import Button from "../../atom/Button"
@@ -53,7 +52,7 @@ const ModalMessage: React.FC<Props> = props => {
   
   return (
     <div className={c(className)} >
-      <Modal
+      <ReactModal
         style={customStyles}
         isOpen = {isOpen}
         ariaHideApp= {false}
@@ -79,7 +78,7 @@ const ModalMessage: React.FC<Props> = props => {
             type={"success"}/>
           {isShowBtnCancel && <ButtonOutline className="ml-3 text-sm"name={lblClose}  onClick={onClose} type={"danger"}/>}
         </div>
-      </Modal>
+      </ReactModal>
     </div>
   )
 }

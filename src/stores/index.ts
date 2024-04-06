@@ -1,7 +1,7 @@
 import { AnyAction, combineReducers, configureStore } from "@reduxjs/toolkit"
 
-// import me from "./me"
-import constract from "./constract"
+import me from "./user"
+import order from "./order"
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
 import type { ThunkDispatch } from "redux-thunk"
 import {
@@ -16,8 +16,8 @@ import {
 import storage from "redux-persist/lib/storage"
 
 const reducer = combineReducers({
-  // me: me.reducer,
-  constract: constract.reducer,
+  user: me.reducer,
+  order:  order.reducer
 })
 
 const persistConfig = {
