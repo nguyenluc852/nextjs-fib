@@ -1,6 +1,5 @@
 import '../../styles/globals.scss'
-import { Provider, useDispatch } from "react-redux";
-import { createContext, useContext, useState } from 'react';
+import { Provider } from "react-redux";
 import type { AppProps } from 'next/app'
 import { useService } from "../_app_service";
 import { persistStore } from "redux-persist";
@@ -11,24 +10,34 @@ import Header from '../components/templates/Header';
 
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/ReactToastify.min.css";
-import Footer from '../components/templates/Footer';
+import { MetaMaskUIProvider } from '@metamask/sdk-react-ui';
 // Amplify.configure(awsExports);
+
+// function MyApp({ Component, pageProps }: AppProps) {
+//   return <Component {...pageProps} />
+// }
 
 
 function App({ Component,
   pageProps }: AppProps) {
   const { store } = useService();
-  const UserContext = createContext(null);
+  
+  
   const persistor = persistStore(store)
-  const [user, setUser] = useState(null)
   return (
     <div className={s.App}>
-      <div className={c(s.main, "bg-backgr2 bg-no-repeat bg-cover bg-center")}>
+      <div className={c(s.App_Main, "layout flex flex-col h-full max-h-screen")}>
+        <MetaMaskUIProvider sdkOptions={{
+          dappMetadata: {
+            name: "Demo UI React App",
+          }
+        }}>
           <Provider store={store}>
+            
             
               <PersistGate loading={null} persistor={persistor}>
               
-                <Header />
+                <Header  />
 
                 <div className={c(s.App_Container, "relative h-full max-h-screen overflow-hidden bg-gray-100 dark:bg-gray-800") }>
                 <ToastContainer
@@ -38,10 +47,11 @@ function App({ Component,
                   <Component className={s.Container} {...pageProps} />
                   {/* <Component style={s.Container} {...pageProps} /> */}
                 </div>
-                <Footer /> 
+                {/* <Footer /> */} 
               </PersistGate>
 
           </Provider>
+        </MetaMaskUIProvider>
       </div>
     </div>
   );

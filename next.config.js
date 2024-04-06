@@ -1,10 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  trailingSlash: true,
   images: {
     unoptimized: true,
-    domains: ['http://fib-deploy.s3-website-ap-southeast-1.amazonaws.com'],
+    domains: ['https://customer-bucket-domitory.s3.ap-southeast-1.amazonaws.com'],
   }
 }
 

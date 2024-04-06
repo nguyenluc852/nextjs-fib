@@ -46,7 +46,7 @@ class DateUtils {
   }
 
   static formatDateString(date: string) {
-    return moment(date).format("yyyy-MM-DD hh:ss")
+    return moment(date).format("yyyy-MM-DD")
   }
 
   static subtractDate (date : Date, day: number) {
