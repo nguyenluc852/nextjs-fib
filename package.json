@@ -7,35 +7,29 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "proxy": "lcp --proxyUrl  https://66rfzmp318.execute-api.ap-southeast-1.amazonaws.com/stg/"
+    "proxy": "lcp --proxyUrl  https://ow59xtilxf.execute-api.ap-southeast-1.amazonaws.com/dev"
   },
   "dependencies": {
-    "@aws-amplify/ui-react": "^6.1.6",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@metamask/sdk-react": "^0.14.1",
     "@metamask/sdk-react-ui": "^0.14.2",
-    "@next/font": "^13.5.6",
+    "@next/font": "13.1.1",
     "@reduxjs/toolkit": "^1.9.2",
-    "@types/node": "^18.17.0",
-    "@types/react": "^18.2.0",
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.26",
     "@types/react-datepicker": "^4.8.0",
     "@types/react-dom": "18.0.10",
     "@types/react-modal": "^3.13.1",
-    "amazon-cognito-identity-js": "^6.3.7",
-    "aws-amplify": "^6.0.21",
-    "aws-sdk": "^2.1566.0",
     "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.7",
-    "dotenv": "^16.4.1",
-    "eslint": "^8.31.0",
-    "eslint-config-next": "^13.5.6",
-    "feather-icons-react": "^0.7.0",
+    "eslint": "8.31.0",
+    "eslint-config-next": "13.1.1",
     "moment-timezone": "^0.5.40",
-    "next": "^13.5.6",
+    "next": "13.1.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-bootstrap-icons": "^1.10.2",
@@ -49,12 +43,18 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
     "sass": "^1.57.1",
-    "typescript": "^5.0.4"
+    "typescript": "4.9.4"
   },
   "devDependencies": {
-    "@types/react": "*",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "@types/react": "17.0.44"
+  },
+  "overrides": {
+    "@types/react": "17.0.44"
+  },
+  "resolutions": {
+    "@types/react": "17.0.44"
   }
 }

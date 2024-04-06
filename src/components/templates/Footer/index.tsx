@@ -10,7 +10,7 @@ const Index: React.FC<Props> = props => {
   const { className } = props
 
   return (
-    <p>&copy; 2024 Token Financial Broker. All rights reserved.</p>
+    <footer className={c(s.footer, className)}>Copyright © AI CROSS Inc. All rights reserved</footer>
   )
 }
 
