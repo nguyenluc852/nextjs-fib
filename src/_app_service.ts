@@ -6,6 +6,6 @@ export const useService = () => {
   const store = useMemo(() => initializeStore(), [])
 
   return {
-    store,
+    store
   }
 }
