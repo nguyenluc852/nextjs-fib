@@ -56,11 +56,6 @@ export const view = (useService: UseService) => {
     useEffect (() => {
       
       if (userStore.userInfo?.isAdmin === "1") {
-        // const cognitoUser = userPool.getCurrentUser()
-        console.log("user", userStore.userInfo?.token)
-        // if (cognitoUser.getSignInUserSession()?.getAccessToken().getJwtToken() != undefined) {
-        //   setToken(cognitoUser.getSignInUserSession()?.getAccessToken().getJwtToken()+ "")
-        // }
         getListOrder(userStore.userInfo.token)
       } else {
         router.push({

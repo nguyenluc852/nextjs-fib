@@ -66,7 +66,6 @@ export const view = (useService: UseService) => {
         cognitoUser1.getSession(function (err: any, session: any){
           var token = session.getAccessToken().getJwtToken()
           const idToken = session.getIdToken().getJwtToken()
-          console.log("login token", token)
           cognitoUser1.getUserAttributes(function(err, result) {
             if (err) {
               console.log(err);
@@ -98,7 +97,6 @@ export const view = (useService: UseService) => {
           onSuccess: (result) => {
 
             const idToken = result.getIdToken().getJwtToken()
-            console.log("login id token", idToken)
             cognitoUser.getSession(function (err: any, session: any){
               cognitoUser.getUserAttributes(function(err, result) {
                 if (err) {
@@ -154,7 +152,6 @@ export const view = (useService: UseService) => {
 
     const handleConfirmSignUp = async (e: React.FormEvent) => {
       e.preventDefault();
-      console.log("dsdsa")
       try {
         
         userCognito?.confirmRegistration(verificationCode, true, async function(err, result) {
@@ -162,7 +159,6 @@ export const view = (useService: UseService) => {
             alert(err);
             return;
           }
-          console.log("result verify", result)
           toast.success('You have been registed successful.')
           userCognito.signOut()
           setNewUser(false)
@@ -240,7 +236,7 @@ export const view = (useService: UseService) => {
             className="border py-2 px-4 border-gray-500 focus:outline-none mb-4"
             onChange={(e) => setPassword(e.target.value)}
           />
-
+          <a href="/forgotpassword" className={c(s.underline)}>Forgot Password</a>
           {/* <button
             className="mt-3 text-lg font-semibold py-4 px-4 bg-gray-600 text-gray-200"
             type="submit"

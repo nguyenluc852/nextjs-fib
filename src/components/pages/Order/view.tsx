@@ -18,6 +18,7 @@ import { RootState } from "../../../stores";
 import { RequestOrder } from "../../../stores/order/model";
 import { toast } from "react-toastify";
 import DateUtils from "../../../utils/date";
+import NaviTab from "../../atom/NaviTab";
 type Props = {
   className?: string
 }
@@ -27,19 +28,29 @@ export const view = (useService: UseService) => {
     const [amount, setAmount] = useState("0")
     const [wallet, setWallet] = useState("")
     const [price, setPrice] = useState(0.015)
+    const [seletected, setSelected] = useState(0)
     const [estimatedQuantity, setEstimatedQuantity] = useState("0")
     const router = useRouter()
     const [listData, setListData] = useState<Array<Object>>([])
     const [isLoading, setIsLoading] = useState(false)
+    const [stake, setStake] = useState("0")
+    const [reward, setAward] = useState("0")
+    const [total, setTotal] = useState("0")
+    const [user, setUser] = useState({})
     const listColunm = ["Date", "Status", "Wallet", "Amount", "FIB" ]
     const listOrderStore = useSelector((state: RootState) => state.order.listOrder)
     const { createOrder, getListOrder } = useService();
     const userStore = useSelector((state: RootState) => state.user)
+    const localstorageGetInformation=localStorage.getItem('isLoggedIn')
+    const localstorageGetLastLogin=localStorage.getItem('lastLogin')?.toString()
     useEffect (() => {
-      if (userStore.userInfo?.token) {
-        // console.log("tokennn dasdas", userStore.userInfo?.token)
-        
-        getListOrder(userStore.userInfo.token)
+      if (localstorageGetInformation && localstorageGetLastLogin) {
+        const user = JSON.parse(localstorageGetInformation)
+        setUser(user)
+        Object.keys(user).length != 0 ? getListOrder(user.token) : 
+          router.push({
+            pathname: "/"
+          })
       } else {
         router.push({
           pathname: "/"
@@ -79,23 +90,27 @@ export const view = (useService: UseService) => {
     }
 
     const onClickOrder = async () => {
-      if (userStore.userInfo?.token) {
+      if (Object.keys(user).length > 0 ) {
         setIsLoading(true)
         const order: RequestOrder = {
           price: price+"",
-          wallet: wallet,
+          wallet: 'wallet' in user ? user.wallet+"": "" ,
           amount: amount,
           quantity: estimatedQuantity
         }
         console.log(order)
         
-        await createOrder(order, userStore.userInfo.token)
+        await createOrder(order, 'token' in user ? user.token+"": "")
         setIsLoading(false)
         toast.success('You have been ordered successful.')
         
-        await getListOrder(userStore.userInfo.token)
+        await getListOrder('token' in user ? user.token+"": "")
       }
       
+    }
+
+    const onWidthRaw = async () => {
+
     }
    
 
@@ -119,41 +134,62 @@ export const view = (useService: UseService) => {
             </div>
           </div>
 
-          <div className="flex flex-col mb-3 sm:ml-24 mt-10 ">
-            <div className="flex flex-row">
-              <FormBlock 
-                className="flex flex-row" 
-                formClassName="flex-1" 
-                label={"Amount: "} 
-                value={amount}
-                onChange={onChangeAmount}
-                placeholder={"Input amount"} explain={""} ></FormBlock>
-              <Label text="USDT" className="justify-center mt-1"></Label>
-              <ButtonOutline className="ml-2" name="100$" onClick={()=> setAmount("100")} type="primary"></ButtonOutline>
-              <ButtonOutline className="ml-2" name="250$" onClick={()=> setAmount("250")} type="primary"></ButtonOutline>
-              <ButtonOutline className="ml-2" name="500$" onClick={()=> setAmount("500")} type="primary"></ButtonOutline>
+          <NaviTab className="mb-3 sm:ml-24 mt-10 text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700" listItem={["Order", "Stake"]} selectedItem={seletected} onSelectedItem={function (idx: number): void {
+            setSelected(idx)
+          } }/>
+
+          {
+            seletected == 0 ? <div>
+            <div className="flex flex-col mb-3 sm:ml-24 mt-10 ">
+              <div className="flex flex-row">
+                <FormBlock 
+                  className="flex flex-row" 
+                  formClassName="flex-1" 
+                  label={"Amount: "} 
+                  value={amount}
+                  onChange={onChangeAmount}
+                  placeholder={"Input amount"} explain={""} ></FormBlock>
+                <Label text="USDT" className="justify-center mt-1"></Label>
+              </div>
+              <div className="flex flex-row mt-2">
+                
+              </div>
+              <Label className="ml-2 mt-2" text={"FIB estimate:   " + estimatedQuantity + "  FIB"}/>
+              <Button className="ml-2 mt-2 w-40" type="success" name="Order" 
+                onClick={onClickOrder}
+                isDisable={isLoading}
+                isLoading= {isLoading} />
             </div>
-            <div className="flex flex-row mt-2">
+
+            <div className="flex flex-col mb-3 sm:ml-24 mt-10 ">
+
+            <Label className="ml-2 mt-2" text={"Latest Transactions"}/>
+            <Table 
+              className="mt-10 overflow-x-auto sm:-mx-6 lg:-mx-8" 
+              listColunm={listColunm} 
+              listData= {listData}
+              isDetailButton = {false}
+              ></Table>
+
+            </div>
+          </div>
+          : 
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 mb-3 sm:ml-24 mt-10 ">
+            <div className="flex flex-col">
+              <Label className="ml-2 mt-2" text={"Stake :   " + stake + "  FIB"}/>
+              <div className="flex flex-row">
+                <Label className="ml-2 mt-2" text={"Reward :   " + reward + "  FIB"}/>
+                <Button className="w-40 ms-10" name={"Withdraw"} onClick={onWidthRaw} type={"success"} ></Button>
+              </div>
               
+              <Label className="ml-2 mt-2" text={"Total :   " + total + "  FIB"}/>
             </div>
-            <Label className="ml-2 mt-2" text={"FIB estimate:   " + estimatedQuantity + "  FIB"}/>
-            <Button className="ml-2 mt-2 w-40" type="primary" name="Order" 
-              onClick={onClickOrder}
-              isDisable={isLoading}
-              isLoading= {isLoading} />
+            <div className="flex flex-col">
+              <Label className="ml-2 mt-2" text={"Tổng Số tiền huy động : 490.000$"}/>
+              <Label className="ml-2 mt-2" text={"Số tài khoản đã đăng ký : 215"}/>
+            </div>
           </div>
-
-          <div className="flex flex-col mb-3 sm:ml-24 mt-10 ">
-
-          <Label className="ml-2 mt-2" text={"Latest Transactions"}/>
-          <Table 
-            className="mt-10 overflow-x-auto sm:-mx-6 lg:-mx-8" 
-            listColunm={listColunm} 
-            listData= {listData}
-            isDetailButton = {false}
-            ></Table>
-
-          </div>
+          }
         </div>
       </div>
     </main>
