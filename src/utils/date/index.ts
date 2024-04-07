@@ -48,9 +48,18 @@ class DateUtils {
   static formatDateString(date: string) {
     return moment(date).format("yyyy-MM-DD hh:ss")
   }
+  static formatDate(date: string) {
+    return moment(date,"yyyy-MM-DD hh:ss").toDate()
+  }
 
   static subtractDate (date : Date, day: number) {
     return moment(date).subtract(day, "days")
+  }
+  static subtractHour (date : Date, hours: number) {
+    return moment(date).subtract(hours, "hours")
+  }
+  static addHour (date : Date, hours: number) {
+    return moment(date).add(hours, "hours")
   }
   static addDate (date : Date, day: number) {
     return moment(date).add(day, "days")

@@ -25,6 +25,8 @@ import Button from '../../atom/Button';
 import { useDispatch } from "react-redux";
 import { fetchRemoveUser } from '../../../stores/user/effects';
 import { AnyAction } from 'redux';
+import DateUtils from '../../../utils/date';
+import LogUtil from '../../../utils/LogUtil';
 
 
 const userPool = new CognitoUserPool({
@@ -60,94 +62,104 @@ const Header = () => {
   const router = useRouter()
   const userStore = useSelector((state: RootState) => state.user)
   const [isLogout, setIsLogout] = useState(false);
+  const [user, setUser] = useState({});
   const dispatch = useDispatch();
-  
+  const localstorageGetInformation=localStorage.getItem('isLoggedIn')
+  const localstorageGetLastLogin=localStorage.getItem('lastLogin')?.toString()
+
   useEffect (() => {
     console.log("user info", userStore)
-    if(!userStore.userInfo) {
-      setListHeader(solutions)
-    } else if (userStore.userInfo.isAdmin === "0") {
-      setListHeader([
-        {
-          name: 'AboutUs',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/',
-          icon: ChartBarIcon,
-        },{
-          name: 'Overview',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/overview',
-          icon: ChartBarIcon,
-        },{
-          name: 'Vision',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/vision',
-          icon: ChartBarIcon,
-        },{
-          name: 'Product',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/order',
-          icon: ChartBarIcon,
-        },{
-          name: 'Ecosystem',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/ecosystem',
-          icon: ChartBarIcon,
-        },{
-          name: 'Whitebook',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/whitebook',
-          icon: ChartBarIcon,
-        }
-      ])
+    
+    const currentTime = DateUtils.formatDateString(new Date().toString())
 
+    if (localstorageGetInformation && localstorageGetLastLogin) {
+      const user = JSON.parse(localstorageGetInformation)
+      setUser(user)
+      var dateLastLogin = DateUtils.formatDate(localstorageGetLastLogin)
+      var lastLogin = DateUtils.addHour(dateLastLogin, 1)
+      LogUtil.info("compate", DateUtils.isSameOrAfter(lastLogin.toString(), currentTime))
+      if (user.isAdmin === "0" && DateUtils.isSameOrAfter(lastLogin.toString(), currentTime)) {
+        setListHeader([
+          {
+            name: 'AboutUs',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/',
+            icon: ChartBarIcon,
+          },{
+            name: 'Overview',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/overview',
+            icon: ChartBarIcon,
+          },{
+            name: 'Vision',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/vision',
+            icon: ChartBarIcon,
+          },{
+            name: 'Product',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/order',
+            icon: ChartBarIcon,
+          },{
+            name: 'Ecosystem',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/ecosystem',
+            icon: ChartBarIcon,
+          },{
+            name: 'Whitebook',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/whitebook',
+            icon: ChartBarIcon,
+          }
+        ])
+
+      } else if (user.isAdmin === "1" && DateUtils.isSameOrAfter(lastLogin.toString(), DateUtils.formatDateString(localstorageGetLastLogin))) {
+
+        setListHeader([
+          {
+            name: 'AboutUs',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/',
+            icon: ChartBarIcon,
+          },{
+            name: 'Overview',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/overview',
+            icon: ChartBarIcon,
+          },{
+            name: 'Vision',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/vision',
+            icon: ChartBarIcon,
+          },{
+            name: 'Product',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/order',
+            icon: ChartBarIcon,
+          },{
+            name: 'Ecosystem',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/ecosystem',
+            icon: ChartBarIcon,
+          },{
+            name: 'Whitebook',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/whitebook',
+            icon: ChartBarIcon,
+          },{
+            name: 'Admin',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/admin',
+            icon: ChartBarIcon,
+          }
+        ])
+      }
     } else {
-
-      setListHeader([
-        {
-          name: 'AboutUs',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/',
-          icon: ChartBarIcon,
-        },{
-          name: 'AboutUs',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/',
-          icon: ChartBarIcon,
-        },{
-          name: 'Overview',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/overview',
-          icon: ChartBarIcon,
-        },{
-          name: 'Vision',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/vision',
-          icon: ChartBarIcon,
-        },{
-          name: 'Product',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/order',
-          icon: ChartBarIcon,
-        },{
-          name: 'Ecosystem',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/ecosystem',
-          icon: ChartBarIcon,
-        },{
-          name: 'Whitebook',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/whitebook',
-          icon: ChartBarIcon,
-        },{
-          name: 'Admin',
-          description: 'Get a better understanding of where your traffic is coming from.',
-          hrefHd: '/admin',
-          icon: ChartBarIcon,
-        }
-      ])
+      setUser({})
+      setListHeader(solutions)
     }
-  }, [userStore])
+    
+  }, [localstorageGetInformation])
 
   const onClickLogout = async () => {
     
@@ -157,7 +169,9 @@ const Header = () => {
   const signOut = () => {
     const cognitoUser = userPool.getCurrentUser();
     // console.log("Lougout ", cognitoUser)
+    localStorage.removeItem("isLoggedIn")
     if (cognitoUser != null) {
+      
       console.log("Lougout ", cognitoUser)
       cognitoUser.signOut();
       dispatch(fetchRemoveUser() as unknown as AnyAction)
@@ -220,10 +234,10 @@ const Header = () => {
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
 
             {(() => {
-              if (userStore.userInfo) {
+              if (Object.keys(user).length != 0) {
                 return (
                   <div>
-                    <Label text={userStore.userInfo.email}  ></Label>
+                    <Label text={'email' in user ? user.email+"": ""}  ></Label>
                     {/* <Link
                       href="/logout"
                       key={"logout"}
@@ -301,11 +315,12 @@ const Header = () => {
                 
                 <div>
                   {(() => {
-                    if (userStore.userInfo) {
+                    LogUtil.info("user view", user)
+                    if (Object.keys(user).length != 0) {
                       return (
                         <div>
 
-                          <Label text={userStore.userInfo.email}  ></Label>
+                          <Label text={'email' in user ? user.email+"": ""}  ></Label>
                           <p className="mt-6 text-center text-base font-medium text-gray-500">
                             
                             {/* <Link href="/logout" key={"signOutMobile"} className="text-indigo-600 hover:text-indigo-500" >

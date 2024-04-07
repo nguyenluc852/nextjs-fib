@@ -20,6 +20,7 @@ import { useSelector } from "react-redux";
 import { UserInfo } from "../../../stores/user/model";
 import ButtonOutline from "../../atom/ButtonOutline";
 import { toast } from "react-toastify";
+import DateUtils from "../../../utils/date";
 
 const userPool = new CognitoUserPool({
   UserPoolId: awsConfiguration.UserPoolId+"",
@@ -79,6 +80,8 @@ export const view = (useService: UseService) => {
                   token: idToken
                 }
                 setUser(user)
+                localStorage.setItem("isLoggedIn",JSON.stringify(user))
+                localStorage.setItem("lastLogin", DateUtils.formatDateString(new Date().toString()))
               }
             })
           })
@@ -92,8 +95,7 @@ export const view = (useService: UseService) => {
       } else {
         cognitoUser.authenticateUser(authenticationDetails, {
           onSuccess: (result) => {
-            
-            const accessToken = result.getAccessToken().getJwtToken()
+
             const idToken = result.getIdToken().getJwtToken()
             console.log("login id token", idToken)
             cognitoUser.getSession(function (err: any, session: any){
@@ -111,25 +113,11 @@ export const view = (useService: UseService) => {
                       token: idToken
                     }
                     setUser(user)
+                    localStorage.setItem("isLoggedIn",JSON.stringify(user))
+                    localStorage.setItem("lastLogin", DateUtils.formatDateString(new Date().toString()))
                   }
                 })
 
-                // AWS.config.region = "ap-southeast-1"
-                // AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-                //   IdentityPoolId: process.env.NEXT_PUBLIC_IDENTITY_POOL_ID+"", // your identity pool id here
-                //   Logins: {
-                //     // Change the key below according to the specific region your user pool is in.
-                //     'cognito-idp.ap-southeast-1.amazonaws.com/ap-southeast-1_VwzwwNwJE': idToken,
-                //   },
-                // })
-                // AWS.config.credentials.refresh(error => {
-                //   if (error) {
-                //     console.error(error);
-                //   } else {
-                //     // Instantiate aws sdk service objects now that the credentials have been updated.
-                //     console.log('Successfully logged!');
-                //   }
-                // });
               })
             });
             
@@ -138,7 +126,7 @@ export const view = (useService: UseService) => {
             }) : router.push({
               pathname: "/order"
             })
-            
+
           },
           onFailure: (err) => {
             if (err.name === 'UserNotConfirmedException') {
@@ -151,6 +139,7 @@ export const view = (useService: UseService) => {
               });
               return
             }
+            localStorage.setItem("isLoggedIn","")
             console.log(err)
             console.log("NG, signIn:onFailure");
             console.error(err)

@@ -22,81 +22,8 @@ type Props = {
   className?: string
 }
 export const view = (useService: UseService) => {
-  const Home: NextPage = () => {
-    const [gender, setGender] = useState(0)
-    const [amount, setAmount] = useState("0")
-    const [wallet, setWallet] = useState("")
-    const [price, setPrice] = useState(0.015)
-    const [estimatedQuantity, setEstimatedQuantity] = useState("0")
-    const router = useRouter()
-    const [listData, setListData] = useState<Array<Object>>([])
-    const [isLoading, setIsLoading] = useState(false)
-    const listColunm = ["Date", "Status", "Wallet", "Amount", "FIB" ]
-    const listOrderStore = useSelector((state: RootState) => state.order.listOrder)
-    const { createOrder, getListOrder } = useService();
-    const userStore = useSelector((state: RootState) => state.user)
-    useEffect (() => {
-      if (userStore.userInfo?.token) {
-        // console.log("tokennn dasdas", userStore.userInfo?.token)
-        
-        getListOrder(userStore.userInfo.token)
-      } else {
-        router.push({
-          pathname: "/"
-        })
-      }
-        
-    }, [])
-
-    useEffect (() => {
-      const list: Array<Object> = []
-      listOrderStore.map(item => {
-        list.push({
-          createAt: DateUtils.formatDateString(item.createAt),
-          status : item.status,
-          wallet: item.wallet,
-          amount: item.amount,
-          quantity: Number(item.quantity).toFixed(2)
-        })
-      })
-      setListData(list)
-      console.log("list",list)
-    }, [listOrderStore])
-
-    useEffect (() => {
-      let cal = (Number(amount) / price ).toFixed(2)
-      return setEstimatedQuantity(cal+ "");
-    }, [amount])
-
-    const onChangeAmount = (e: ChangeEvent) => {
-      const target = e.target as HTMLInputElement
-      setAmount(target.value)
-    }
-
-    const onChangeWallet = (e: ChangeEvent) => {
-      const target = e.target as HTMLInputElement
-      setWallet(target.value)
-    }
-
-    const onClickOrder = async () => {
-      if (userStore.userInfo?.token) {
-        setIsLoading(true)
-        const order: RequestOrder = {
-          price: price+"",
-          wallet: wallet,
-          amount: amount,
-          quantity: estimatedQuantity
-        }
-        console.log(order)
-        
-        await createOrder(order, userStore.userInfo.token)
-        setIsLoading(false)
-        toast.success('You have been ordered successful.')
-        
-        await getListOrder(userStore.userInfo.token)
-      }
-      
-    }
+  const WhiteBook: NextPage = () => {
+    
    
 
     return <main className={c(styles.main)}>
@@ -510,5 +437,5 @@ export const view = (useService: UseService) => {
           
     </main>
   }
-  return Home
+  return WhiteBook
 }
