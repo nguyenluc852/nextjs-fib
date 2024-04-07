@@ -191,11 +191,6 @@ const Header = () => {
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <Link href="#" key="home">
                 <span className="sr-only">Your Company</span>
-                {/* <img
-                  className="h-8 w-auto sm:h-10"
-                  src="/logo.png"
-                  alt="" */}
-                {/* /> */}
                 <Image path="/logo.png" width={80} height={80}/>
               </Link>
             </div>
@@ -352,9 +347,6 @@ const Header = () => {
                       )
                     }
                   })()}
-                  
-
-                  
                 </div>
               </div>
             </div>

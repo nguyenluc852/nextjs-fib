@@ -58,7 +58,8 @@ export const view = (useService: UseService) => {
       var user: UserInfo = {
         email: "",
         isAdmin: "",
-        token: ""
+        token: "",
+        wallet:""
       }
       if (cognitoUser1) {
         
@@ -71,19 +72,19 @@ export const view = (useService: UseService) => {
               console.log(err);
               return;
             }
-            
+            user.email = email
+            user.token = idToken
             result?.forEach(attribute=> {
+
               if (attribute.getName() === "custom:is_Admin") {
-                user = {
-                  email: email,
-                  isAdmin: attribute.Value,
-                  token: idToken
-                }
-                setUser(user)
-                localStorage.setItem("isLoggedIn",JSON.stringify(user))
-                localStorage.setItem("lastLogin", DateUtils.formatDateString(new Date().toString()))
+                user.isAdmin = attribute.Value
+              } else if (attribute.getName() === "custom:wallet") {
+                user.wallet = attribute.Value
               }
             })
+            setUser(user)
+            localStorage.setItem("isLoggedIn",JSON.stringify(user))
+            localStorage.setItem("lastLogin", DateUtils.formatDateString(new Date().toString()))
           })
         });
         user.isAdmin === "1" ? router.push({
@@ -105,19 +106,19 @@ export const view = (useService: UseService) => {
                   return;
                 }
                 
+                user.email = email
+                user.token = idToken
                 result?.forEach(attribute=> {
+
                   if (attribute.getName() === "custom:is_Admin") {
-                    user = {
-                      email: email,
-                      isAdmin: attribute.Value,
-                      token: idToken
-                    }
-                    setUser(user)
-                    localStorage.setItem("isLoggedIn",JSON.stringify(user))
-                    localStorage.setItem("lastLogin", DateUtils.formatDateString(new Date().toString()))
+                    user.isAdmin = attribute.Value
+                  } else if (attribute.getName() === "custom:wallet") {
+                    user.wallet = attribute.Value
                   }
                 })
-
+                setUser(user)
+                localStorage.setItem("isLoggedIn",JSON.stringify(user))
+                localStorage.setItem("lastLogin", DateUtils.formatDateString(new Date().toString()))
               })
             });
             

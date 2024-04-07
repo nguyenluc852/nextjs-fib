@@ -1,7 +1,8 @@
 export type UserInfo = {
   email: string,
   isAdmin: string, 
-  token: String
+  token: String,
+  wallet: String
 }
 
 

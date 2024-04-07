@@ -15,9 +15,6 @@ import {
 import {awsConfiguration} from '../../../../awsConfigution'
 import Button from "../../atom/Button";
 import { toast } from "react-toastify";
-import { RootState } from "../../../stores";
-import { useSelector } from "react-redux";
-import Label from "../../atom/Label";
 import ButtonOutline from "../../atom/ButtonOutline";
 
 const userPool = new CognitoUserPool({
@@ -31,6 +28,7 @@ export const view = (useService: UseService) => {
   const Register: NextPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [wallet, setWallet] = useState("");
     const [newUser, setNewUser] = useState(false);
     const [verificationCode, setVerificationCode] = useState("")
     const [userCognito, setUserCognito] = useState<CognitoUser>()
@@ -45,8 +43,13 @@ export const view = (useService: UseService) => {
         Name: 'custom:is_Admin',
         Value: '0',
       }
+      var dataWallet = {
+        Name: 'custom:wallet',
+        Value: '0',
+      }
       var attributeIsAdmin =  new CognitoUserAttribute(dataIsAdmin);
       attributeList.push(attributeIsAdmin)
+      attributeList.push(new CognitoUserAttribute(dataWallet))
 
       try {
         userPool.signUp(email, password, attributeList, [], async function(
@@ -147,6 +150,15 @@ export const view = (useService: UseService) => {
                   type="password"
                   className="border py-2 px-4 border-gray-500 focus:outline-none mb-4"
                   onChange={(e) => setPassword(e.target.value)}
+                  />
+
+                <label htmlFor="wallet"> Wallet</label>
+                <input
+                  id="wallet"
+                  value={wallet}
+                  type="text"
+                  className="border py-2 px-4 border-gray-500 focus:outline-none mb-4"
+                  onChange={(e) => setWallet(e.target.value)}
                   />
 
                 <button
