@@ -29,16 +29,16 @@ export const view = (useService: UseService) => {
 
     return <main className={c(styles.main)}>
        <main
-        className={c(styles.main, "bg-backgr2 bg-no-repeat bg-cover bg-center")}
+        className={c(styles.main)}
        >
         <div className="responsive">
           <div className="container">
             {/* Title Overview of FIB ecosystem */}
-            <div className="mt-1">
-              <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+            <div className="mt-5">
+              <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                 Overview of FIB ecosystem
               </span>
-              <p className="font-normal text-[26px] text-neutral-50 mt-5">
+              <p className="font-normal text-gray-500 text-sm md:text-lg mt-5">
                 The FIB token ecosystem revolves around main groups including
                 users, organizations, investors and decentralized exchanges (DEX
                 exchange). Below is a description of each group's role and
@@ -49,10 +49,10 @@ export const view = (useService: UseService) => {
                 <div className="col-span-2">
                   <div className="mt-5">
                     <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                      <span className="font-normal text-gray-600 text-lg md:text-lg">
                         Q1
                       </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
                         Users: Users are individuals or organizations that use
                         FIB tokens in applications and services. They can use
                         FIB tokens to exchange between accounts, make
@@ -66,10 +66,10 @@ export const view = (useService: UseService) => {
 
                   <div className="mt-5">
                     <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                      <span className="font-normal text-gray-600 text-lg md:text-lg">
                         Q2
                       </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
                         Organization: Organizations can be businesses, projects,
                         non-profit organizations or any other entity in the FIB
                         token ecosystem. They can use FIB tokens to create and
@@ -83,10 +83,10 @@ export const view = (useService: UseService) => {
 
                   <div className="mt-5">
                     <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                      <span className="font-normal text-gray-600 text-lg md:text-lg">
                         Q3
                       </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
                         Investors: Investors play an important role in
                         supporting and developing the FIB token ecosystem. They
                         can purchase FIB tokens during public or initial coin
@@ -100,10 +100,10 @@ export const view = (useService: UseService) => {
 
                   <div className="mt-5">
                     <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                      <span className="font-normal text-gray-600 text-lg md:text-lg">
                         Q4
                       </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
                         Decentralized exchange (DEX exchange): Decentralized
                         exchange is where users can exchange FIB tokens with
                         each other. This is where liquidity is provided and the
@@ -117,7 +117,7 @@ export const view = (useService: UseService) => {
                     </div>
                   </div>
                   <div className="mt-5 ml-[30px]">
-                    <p className="font-normal text-[26px] text-[#FBD786]">
+                    <p className="font-normal text-sm md:text-lg text-gray-500">
                       FIB token ecosystem includes users, organizations,
                       investors and decentralized exchanges. Each group plays an
                       important role and interacts with each other to build and
@@ -125,16 +125,18 @@ export const view = (useService: UseService) => {
                     </p>
                   </div>
                 </div>
-                
+                <div className="mt-5">
+                  <img src="/Anhsodo01.png" alt="Anhs" />
+                </div>               
               </div>
             </div>
 
             {/* Role and operational */}
             <div className="mt-20">
-              <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+              <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                 Role and operational objectives of FIB
               </span>
-              <p className="font-normal text-[26px] text-neutral-50 mt-5">
+              <p className="font-normal text-gray-500 text-sm md:text-lg mt-5">
                 FIB tokens in blockchain-based financial brokerage can be
                 designed to play a role in creating and managing financial
                 transactions and services between parties in a blockchain
@@ -144,10 +146,10 @@ export const view = (useService: UseService) => {
               {/* FIB */}
               <div className="grid gap-10 grid-cols-2 mt-10">
                 <div className="row-start-2 row-span-2">
-                  <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                  <span className="font-normal text-gray-600 text-lg md:text-lg">
                     01
                   </span>
-                  <p className="font-normal text-[26px] text-neutral-50">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg">
                     Payment features: FIB token can be used as a means of
                     payment in financial transactions on the blockchain
                     platform. Users can use FIB to exchange, transfer money or
@@ -156,10 +158,10 @@ export const view = (useService: UseService) => {
                 </div>
 
                 <div className="row-end-5 row-span-2 ">
-                  <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                  <span className="font-normal text-gray-600 text-lg md:text-lg">
                     02
                   </span>
-                  <p className="font-normal text-[26px] text-neutral-50">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg">
                     Smart contracts: FIB tokens can be integrated with smart
                     contracts on the blockchain. This allows automatic financing
                     terms and conditions to be set without the need for
@@ -170,10 +172,10 @@ export const view = (useService: UseService) => {
                 </div>
 
                 <div className="row-start-4 row-span-2 ">
-                  <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                  <span className="font-normal text-gray-600 text-lg md:text-lg">
                     03
                   </span>
-                  <p className="font-normal text-[26px] text-neutral-50">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg">
                     Ownership and voting rights: FIB tokens can bring ownership
                     and voting rights to users. This can allow investors or
                     users to participate in decisions about changes, upgrades
@@ -182,10 +184,10 @@ export const view = (useService: UseService) => {
                 </div>
 
                 <div className="row-end-7 row-span-2 ">
-                  <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                  <span className="font-normal text-gray-600 text-lg md:text-lg">
                     04
                   </span>
-                  <p className="font-normal text-[26px] text-neutral-50">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg">
                     Support trading and liquidity: FIB token can be used to
                     support trading and liquidity in financial brokerage. This
                     can include providing liquidity to trading pairs, supporting
@@ -196,10 +198,10 @@ export const view = (useService: UseService) => {
                 </div>
 
                 <div className="row-end-8 row-span-2">
-                  <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                  <span className="font-normal text-gray-600 text-lg md:text-lg">
                     05
                   </span>
-                  <p className="font-normal text-[26px] text-neutral-50">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg">
                     Links and integrations: FIB tokens can create opportunities
                     for links and integrations with other financial services and
                     platforms. This could open up opportunities for
@@ -209,10 +211,10 @@ export const view = (useService: UseService) => {
                 </div>
 
                 <div className="row-start-7 row-span-2 ">
-                  <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                  <span className="font-normal text-gray-600 text-lg md:text-lg">
                     06
                   </span>
-                  <p className="font-normal text-[26px] text-neutral-50">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg">
                     Security: With the support of blockchain technology, FIB
                     tokens can provide a safe and secure environment for
                     financial transactions. Transactions are encrypted and
@@ -222,10 +224,10 @@ export const view = (useService: UseService) => {
                 </div>
 
                 <div className="row-end-10 row-span-2 ">
-                  <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                  <span className="font-normal text-gray-600 text-lg md:text-lg">
                     07
                   </span>
-                  <p className="font-normal text-[26px] text-neutral-50">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg">
                     Transparency: Blockchain provides a transparent environment
                     in which transactions and activities related to FIB tokens
                     can be publicly tracked and audited. This helps increase
@@ -236,10 +238,10 @@ export const view = (useService: UseService) => {
                 </div>
 
                 <div className="row-start-9 row-span-2 ">
-                  <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                  <span className="font-normal text-gray-600 text-lg md:text-lg">
                     08
                   </span>
-                  <p className="font-normal text-[26px] text-neutral-50">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg">
                     Save time and costs: Using FIB tokens in financial brokerage
                     on the blockchain can minimize dependence on intermediaries
                     and reduce complicated paperwork. This can help save time
@@ -248,10 +250,10 @@ export const view = (useService: UseService) => {
                 </div>
 
                 <div className="row-end-12 row-span-2 ">
-                  <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                  <span className="font-normal text-gray-600 text-lg md:text-lg">
                     09
                   </span>
-                  <p className="font-normal text-[26px] text-neutral-50">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg">
                     Growth potential: A financial brokerage platform on
                     blockchain using FIB tokens can bring growth and development
                     potential in the financial sector. The use of blockchain
@@ -262,10 +264,10 @@ export const view = (useService: UseService) => {
                 </div>
 
                 <div className="row-start-11 row-span-2 ">
-                  <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                  <span className="font-normal text-gray-600 text-lg md:text-lg">
                     10
                   </span>
-                  <p className="font-normal text-[26px] text-neutral-50">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg">
                     Easy integration: FIB token can be easily integrated with
                     other financial services and applications on the blockchain.
                     This opens up opportunities for building complex financial
@@ -275,6 +277,8 @@ export const view = (useService: UseService) => {
                 </div>
               </div>
             </div>
+
+
           </div>
         </div>
       </main>

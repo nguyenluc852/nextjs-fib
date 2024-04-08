@@ -28,23 +28,23 @@ export const view = (useService: UseService) => {
 
     return <main className={c(styles.main)}>
         <main
-        className={c(styles.main, "bg-backgr2 bg-no-repeat bg-cover bg-center")}
+        className={c(styles.main)}
         >
         <div className="responsive">
           <div className="container">
+             {/* white book */}
             <div className="mt-5">
-              {/* white book */}
               <div className="mt-1">
-                <span className="text-[50px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                   White book
                 </span>
 
                 {/* I. Introduction */}
-                <div className="mt-1 ml-[30px]">
-                  <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                <div className="mt-5 ml-[30px]">
+                  <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                     I. Introduction
                   </span>
-                  <p className="font-normal text-[25px] text-neutral-50 mt-5">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg mt-5">
                     This WhiteBook describes in detail the FIB Token on the
                     Binance Smart Chain (BSC) platform. FIB token is a type of
                     cryptocurrency token created on BSC, with the goal of acting
@@ -57,22 +57,19 @@ export const view = (useService: UseService) => {
                 </div>
 
                 {/* II. Target */}
-                <div className="mt-1 ml-[30px]">
-                  <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                <div className="mt-5 ml-[30px]">
+                  <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                     II. Target
                   </span>
-                  <p className="font-normal text-[25px] text-neutral-50 mt-5">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg mt-5">
                     FIB token on BSC is designed with the following main goals:
                   </p>
                   <div className="grid grid-cols-3 gap-3">
                     <div className="col-span-2">
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            01
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Becoming a global financial intermediary: Token FIB
+                        <div className="ml-[30px]">                        
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            1. Becoming a global financial intermediary: Token FIB
                             aims to build a decentralized financial platform on
                             BSC, providing diverse and convenient financial
                             services to customers globally. FIB token will
@@ -84,12 +81,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            02
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Increased flexibility and utility: FIB tokens on BSC
+                        <div className="ml-[30px]">                        
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            2. Increased flexibility and utility: FIB tokens on BSC
                             will provide flexibility and utility for users in
                             trading, borrowing, investing and managing assets.
                             Users can use FIB Token to access financial products
@@ -100,12 +94,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            03
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Enhance security and reliability: FIB token on BSC
+                        <div className="ml-[30px]">                        
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            3. Enhance security and reliability: FIB token on BSC
                             will apply advanced security measures and BSC's
                             blockchain technology to ensure the security and
                             reliability of transactions and financial data.
@@ -117,12 +108,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            04
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Building a decentralized financial ecosystem: FIB
+                        <div className="ml-[30px]">                      
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            4. Building a decentralized financial ecosystem: FIB
                             Token aims to develop a decentralized financial
                             ecosystem, allowing users to access financial
                             services conveniently and safely.
@@ -131,12 +119,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            05
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Provides flexibility and utility: FIB Token allows
+                        <div className="ml-[30px]">                     
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            5. Provides flexibility and utility: FIB Token allows
                             users to conduct financial transactions, access
                             financial services and use other features on the FIB
                             platform with flexibility and convenience profit.
@@ -145,12 +130,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            06
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Enhanced security: FIB token uses blockchain
+                        <div className="ml-[30px]">                     
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            6. Enhanced security: FIB token uses blockchain
                             technology and smart contract protocols to ensure
                             the security and safety of transactions and
                             financial data.
@@ -162,20 +144,17 @@ export const view = (useService: UseService) => {
                 </div>
 
                 {/* III. Structure */}
-                <div className="mt-1 ml-[30px]">
-                  <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                <div className="mt-5 ml-[30px]">
+                  <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                     III. Structure
                   </span>
 
                   <div className="grid grid-cols-3 gap-4">
                     <div className="col-span-2">
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            01
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Binance Smart Chain: FIB token is built on the
+                        <div className="ml-[30px]">                      
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            1. Binance Smart Chain: FIB token is built on the
                             Binance Smart Chain platform, a public and
                             decentralized blockchain. BSC offers fast
                             transaction speeds and low transaction fees,
@@ -186,12 +165,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            02
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Open standards: FIB tokens comply with open
+                        <div className="ml-[30px]">                         
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            2. Open standards: FIB tokens comply with open
                             standards such as the ERC-20 standard on BSC, which
                             increases compatibility and usability in various
                             examples and applications on BSC.
@@ -200,12 +176,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            03
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Smart contract protocol: FIB token on BSC uses BSC's
+                        <div className="ml-[30px]">                  
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            3. Smart contract protocol: FIB token on BSC uses BSC's
                             smart contract protocol to manage transactions and
                             interactions on the platform. This protocol provides
                             automation and ensures that transactions are
@@ -218,20 +191,17 @@ export const view = (useService: UseService) => {
                 </div>
 
                 {/* IV. Feature */}
-                <div className="mt-1 ml-[30px]">
-                  <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                <div className="mt-5 ml-[30px]">
+                  <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                     IV. Feature
                   </span>
 
                   <div className="grid grid-cols-3 gap-4">
                     <div className="col-span-2">
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            01
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Transactions: FIB token allows users to perform
+                        <div className="ml-[30px]">                       
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            1. Transactions: FIB token allows users to perform
                             financial transactions such as money transfers,
                             payments and exchanges with fast speed and low
                             transaction fees on the BSC platform.
@@ -240,12 +210,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            02
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Borrowing: FIB Token users can take advantage of the
+                        <div className="ml-[30px]">                      
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            2. Borrowing: FIB Token users can take advantage of the
                             borrowing feature to create liquidity and enhance
                             their investment capabilities. Professional
                             financial institutions can provide borrowing
@@ -256,12 +223,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            03
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Asset Management: FIB Token provides tools and
+                        <div className="ml-[30px]">                    
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            3. Asset Management: FIB Token provides tools and
                             interfaces for users to conveniently manage their
                             assets. Users can track, evaluate and manage their
                             digital assets on the BSC platform.
@@ -270,12 +234,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            04
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Multi-supply trading: FIB token will facilitate
+                        <div className="ml-[30px]">                     
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            4. Multi-supply trading: FIB token will facilitate
                             users to conduct multi-supply trading, allowing them
                             to access different financial markets and exchanges
                             globally.
@@ -284,12 +245,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            05
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Financial services: FIB token allows access and use
+                        <div className="ml-[30px]">                     
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            5. Financial services: FIB token allows access and use
                             of financial services on the FIB platform, including
                             e-wallets, loans, savings, insurance and other
                             services. Users can use FIB Token to access and use
@@ -299,12 +257,9 @@ export const view = (useService: UseService) => {
                       </div>
 
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            06
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Application development platform: FIB Token provides
+                        <div className="ml-[30px]">                  
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            6. Application development platform: FIB Token provides
                             a platform for developers to build and deploy
                             financial applications on the FIB platform.
                             Developers can leverage the features and technology
@@ -319,20 +274,16 @@ export const view = (useService: UseService) => {
                 </div>
 
                 {/* V. Development potential */}
-                <div className="mt-1 ml-[30px]">
-                  <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                <div className="mt-5 ml-[30px]">
+                  <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                     V. Development potential
                   </span>
-
                   <div className="grid grid-cols-3 gap-4">
                     <div className="col-span-2">
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            01
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Development team: A talented and experienced
+                        <div className="ml-[30px]">                       
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            1. Development team: A talented and experienced
                             development team will ensure the continuous
                             development and improvement of FIB Token and its
                             surrounding ecosystem.
@@ -342,11 +293,8 @@ export const view = (useService: UseService) => {
 
                       <div className="mt-5">
                         <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            02
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Strategic partners: Strategic partners in the fields
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            2. Strategic partners: Strategic partners in the fields
                             of finance and technology will create opportunities
                             for cooperation, expanding the scale and scope of
                             FIB Token.
@@ -356,11 +304,8 @@ export const view = (useService: UseService) => {
 
                       <div className="mt-5">
                         <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            03
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            User adoption: Wide acceptance and use of FIB Token
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            3. User adoption: Wide acceptance and use of FIB Token
                             by users will contribute significantly to the
                             development and increase in value of the token.
                           </p>
@@ -369,11 +314,8 @@ export const view = (useService: UseService) => {
 
                       <div className="mt-5">
                         <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            04
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Ecosystem expansion: FIB Token will continuously
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            4. Ecosystem expansion: FIB Token will continuously
                             expand its ecosystem by collaborating with other
                             professional financial institutions, exchanges and
                             blockchain projects globally. This will create more
@@ -385,11 +327,8 @@ export const view = (useService: UseService) => {
 
                       <div className="mt-5">
                         <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            05
-                          </span>
-                          <p className="font-normal text-[25px] text-neutral-50">
-                            Enhance security: Token FIB will continue to
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            5. Enhance security: Token FIB will continue to
                             research and deploy advanced security technologies
                             to ensure the security and reliability of the
                             system. This will help users feel secure when using
@@ -400,11 +339,8 @@ export const view = (useService: UseService) => {
 
                       <div className="mt-5">
                         <div className="ml-[30px]">
-                          <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                            06
-                          </span>
-                          <p className="font-normal text-[25px]  text-neutral-50">
-                            Application expansion: FIB token will facilitate the
+                          <p className="font-normal text-gray-500 text-sm md:text-lg">
+                            6. Application expansion: FIB token will facilitate the
                             development of new applications and services on the
                             BSC platform, to meet the diverse financial needs of
                             users globally.
@@ -415,12 +351,12 @@ export const view = (useService: UseService) => {
                   </div>
                 </div>
 
-                {/* BECAUSE. Conclude */}
-                <div className="mt-1 ml-[30px]">
-                  <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                    BECAUSE. Conclude
+                {/*  VI. Conclude */}
+                <div className="mt-5 ml-[30px]">
+                  <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
+                    VI. Conclude
                   </span>
-                  <p className="font-normal text-[25px] text-neutral-50 mt-5">
+                  <p className="font-normal text-gray-500 text-sm md:text-lg mt-5">
                     The FIB token on the Binance Smart Chain platform is a
                     global financial intermediary, providing flexibility,
                     utility and security to users. With the goal of serving as a

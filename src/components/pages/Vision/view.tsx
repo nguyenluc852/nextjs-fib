@@ -27,14 +27,13 @@ export const view = (useService: UseService) => {
 
     return <main className={c(styles.main)}>
       <main
-        className={c(styles.main, "bg-backgr2 bg-no-repeat bg-cover bg-center")}
+        className={c(styles.main)}
       >
         <div className="responsive">
           <div className="container">
-             {/* Vision */}
-             <div className="mt-5">
-              <div className="mt-1">
-                <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+          <div className="mt-5">
+              <div className="mt-1 text-justify">
+                <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                   Vision
                 </span>
               </div>
@@ -46,11 +45,8 @@ export const view = (useService: UseService) => {
                 <div className="col-span-2">
                   <div className="mt-5">
                     <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        01
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        The vision of the FIB token is to build a decentralized
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - The vision of the FIB token is to build a decentralized
                         and global financial ecosystem, aiming to connect
                         customers with professional financial institutions
                         around the world. FIB Token creates a blockchain and
@@ -63,11 +59,8 @@ export const view = (useService: UseService) => {
 
                   <div className="mt-5">
                     <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        02
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        This vision aims to create an open financial environment
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - This vision aims to create an open financial environment
                         in which customers are not limited by geographical
                         boundaries and access restrictions. The FIB token allows
                         customers globally to access professional financial
@@ -78,12 +71,9 @@ export const view = (useService: UseService) => {
                   </div>
 
                   <div className="mt-5">
-                    <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        03
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        The ultimate goal of the FIB token is to create a
+                    <div className="ml-[30px]">                    
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - The ultimate goal of the FIB token is to create a
                         trusted network of connections between customers and
                         professional financial institutions. Thanks to
                         blockchain technology, information and transactions are
@@ -96,12 +86,9 @@ export const view = (useService: UseService) => {
                   </div>
 
                   <div className="mt-5">
-                    <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        04
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        The vision of the FIB token also emphasizes progress and
+                    <div className="ml-[30px]">                 
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - The vision of the FIB token also emphasizes progress and
                         innovation in the financial sector. FIB Token hopes to
                         create new financial solutions, such as digital assets,
                         decentralized trading and other innovative financial
@@ -112,7 +99,7 @@ export const view = (useService: UseService) => {
                     </div>
                   </div>
                   <div className="mt-5 ml-[30px]">
-                    <p className="text-[26px] text-[#FBD786]">
+                    <p className="font-normal text-sm md:text-lg text-gray-500">
                       The vision of FIB token is to connect customers with
                       professional financial institutions globally through a
                       decentralized, secure and innovative financial ecosystem.
@@ -125,20 +112,17 @@ export const view = (useService: UseService) => {
             {/* Mission */}
             <div className="mt-5">
               <div className="mt-1">
-                <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                  Mission
+                <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
+                Mission
                 </span>
               </div>
 
               <div className="grid grid-cols-3 gap-4">
                 <div className="col-span-2">
                   <div className="mt-5">
-                    <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        01
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        The mission of FIB token is to create a platform that
+                    <div className="ml-[30px]">                  
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - The mission of FIB token is to create a platform that
                         connects customers with professional financial
                         institutions globally. FIB Token hopes to address
                         challenges and limitations in accessing financial
@@ -150,11 +134,8 @@ export const view = (useService: UseService) => {
 
                   <div className="mt-5">
                     <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        02
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        This mission aims to provide customers with a wider
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - This mission aims to provide customers with a wider
                         range and easy access to high-quality financial services
                         from professional financial institutions globally. The
                         FIB token creates a decentralized environment in which
@@ -165,12 +146,9 @@ export const view = (useService: UseService) => {
                   </div>
 
                   <div className="mt-5">
-                    <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        03
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        FIB Token provides a fair and transparent mechanism for
+                    <div className="ml-[30px]">                     
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - FIB Token provides a fair and transparent mechanism for
                         customers to access and use financial services. By
                         leveraging blockchain technology and smart contracts,
                         FIB tokens authenticate and protect customer
@@ -181,12 +159,9 @@ export const view = (useService: UseService) => {
                   </div>
 
                   <div className="mt-5">
-                    <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        04
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        The mission of FIB token is also to create a strong
+                    <div className="ml-[30px]">                   
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - The mission of FIB token is also to create a strong
                         connection network between customers and professional
                         financial institutions. FIB Token creates a global
                         financial community in which customers can interact,
@@ -197,7 +172,7 @@ export const view = (useService: UseService) => {
                     </div>
                   </div>
                   <div className="mt-5 ml-[30px]">
-                    <p className="font-normal text-[26px] text-[#FBD786]">
+                    <p className="font-normal text-sm md:text-lg text-gray-500">
                       The mission of FIB token is to connect customers with
                       professional financial institutions globally through a
                       decentralized, fair and secure platform. FIB Token hopes
@@ -215,7 +190,7 @@ export const view = (useService: UseService) => {
             {/* Goal */}
             <div className="mt-5">
               <div className="mt-1">
-                <span className="text-[40px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
+                <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                   Goal
                 </span>
               </div>
@@ -227,11 +202,8 @@ export const view = (useService: UseService) => {
                 <div className="col-span-2">
                   <div className="mt-5">
                     <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        01
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        The goal of the FIB token is to serve as an intermediary
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - The goal of the FIB token is to serve as an intermediary
                         fee between customers and global professional financial
                         institutions. FIB tokens can be used as a payment method
                         to access and use financial services on the FIB
@@ -242,11 +214,8 @@ export const view = (useService: UseService) => {
 
                   <div className="mt-5">
                     <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        02
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        When customers use financial services from partner
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - When customers use financial services from partner
                         institutions on the FIB platform, they may be required
                         to pay a fee. FIB token is used as a means of payment in
                         this transaction. By using FIB tokens, customers can
@@ -257,12 +226,9 @@ export const view = (useService: UseService) => {
                   </div>
 
                   <div className="mt-5">
-                    <div className="ml-[30px]">
-                      <span className="text-[36px] leading-[44px] font-normal bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                        03
-                      </span>
-                      <p className="font-normal text-[26px] text-neutral-50">
-                        Using FIB tokens as an intermediary fee between
+                    <div className="ml-[30px]">                     
+                      <p className="font-normal text-gray-500 text-sm md:text-lg">
+                        - Using FIB tokens as an intermediary fee between
                         customers and global professional financial institutions
                         can bring many benefits. For customers, using FIB tokens
                         can reduce transaction costs and increase convenience
@@ -275,7 +241,7 @@ export const view = (useService: UseService) => {
                   </div>
 
                   <div className="mt-5 ml-[30px]">
-                    <p className="font-normal text-[26px] text-[#FBD786]">
+                    <p className="font-normal text-sm md:text-lg text-gray-500">
                       FIB token is used as an intermediary fee between customers
                       and global professional financial institutions to access
                       and use financial services on the FIB platform.
@@ -284,7 +250,6 @@ export const view = (useService: UseService) => {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </main>   
