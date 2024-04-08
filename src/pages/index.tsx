@@ -1004,19 +1004,13 @@ export default function Home() {
 
 
 {/* Title Overview of FIB ecosystem */}
-             <div className="mt-5">
+             <div className="mt-10">
              <span className="font-normal text-gray-500 text-sm md:text-lg ml-10">
               Roadmap
               </span>
              <div className="mt-5">
                   <img src="/anhroadmap.png" alt="image" />
-              </div>
-              <span className="font-normal text-gray-500 text-sm md:text-lg ml-5">
-              Ecosystem
-              </span>
-              <div className=" ml-[1060px] mt-5">
-                  <img src="/anhsodo01.png" alt="image" />
-              </div>   
+              </div> 
               <span className="font-semibold text-gray-700 text-3xl md:text-4xl text-center mb-5">
                 Overview of FIB ecosystem
               </span>
@@ -1094,8 +1088,11 @@ export default function Home() {
                       develop the FIB token ecosystem.
                     </p>
                   </div>
-                </div>             
-              </div> 
+                </div>
+                <div className=" mt-20">
+                  <img src="/anhsodo01.png" alt="image" />
+                </div>               
+              </div>
             </div>
 
             {/* Role and operational */}
