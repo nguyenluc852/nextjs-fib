@@ -37,6 +37,7 @@ export const view = (useService: UseService) => {
     const [password, setPassword] = useState("")
     const [newUser, setNewUser] = useState(false);
     const [verificationCode, setVerificationCode] = useState("")
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const userStore = useSelector((state: RootState) => state.user)
     const { setUser } = useService();
     const [userCognito, setUserCognito] = useState<CognitoUser>()
@@ -188,6 +189,10 @@ export const view = (useService: UseService) => {
       }
         
     }
+
+    function togglePasswordVisibility() {
+      setIsPasswordVisible((prevState) => !prevState);
+    }
    
 
     return <main className={c(styles.main, "bg-gray-200 h-screen flex items-center justify-center")}>
@@ -229,14 +234,42 @@ export const view = (useService: UseService) => {
           />
 
           <label htmlFor="password"> Password</label>
-          <input
+          {/* <input
             id="password"
             value={password}
             type="password"
             className="border py-2 px-4 border-gray-500 focus:outline-none mb-4"
             onChange={(e) => setPassword(e.target.value)}
-          />
-          <a href="/forgotpassword" className={c(s.underline)}>Forgot Password</a>
+          /> */}
+          {/* <div className="flex flex-row"> */}
+            <input
+              id="password"
+              type={isPasswordVisible ? "text" : "password"}
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full
+              px-4
+              py-2
+              text-base
+              border border-gray-300
+              rounded
+              outline-none
+              focus:ring-blue-500 focus:border-blue-500 focus:ring-1"
+            />
+           <label className="flex items-center mt-2">
+            <input
+              type="checkbox"
+              className="mr-2 w-4 h-4"
+              checked={isPasswordVisible}
+              onChange={togglePasswordVisibility}
+            />
+            <span className="text-sm text-gray-600">Show password</span>
+          </label>
+          {/* </div>   */}
+
+
+          <a href="/forgotpassword" className={c(s.underline, "mt-5")}>Forgot Password</a>
           {/* <button
             className="mt-3 text-lg font-semibold py-4 px-4 bg-gray-600 text-gray-200"
             type="submit"

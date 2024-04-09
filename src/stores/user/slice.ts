@@ -4,7 +4,8 @@ import type { State, UserInfo } from "./model"
 import type { PayloadAction } from "@reduxjs/toolkit"
 
 const initialState: State = {
-  userInfo: null
+  userInfo: null, 
+  nav: false
 }
 
 const slice = createSlice({
@@ -16,6 +17,9 @@ const slice = createSlice({
     },
     removeUser: (state) => {
       state.userInfo = null
+    },
+    setNav: (state, action: PayloadAction<boolean>) => {
+      state.nav = action.payload
     },
   },
 })

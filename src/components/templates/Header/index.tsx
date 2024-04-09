@@ -23,7 +23,7 @@ import {
 import {awsConfiguration} from '../../../../awsConfigution'
 import Button from '../../atom/Button';
 import { useDispatch } from "react-redux";
-import { fetchRemoveUser } from '../../../stores/user/effects';
+import { fetchRemoveUser, fetchSetNav } from '../../../stores/user/effects';
 import { AnyAction } from 'redux';
 import DateUtils from '../../../utils/date';
 import LogUtil from '../../../utils/LogUtil';
@@ -37,9 +37,9 @@ const userPool = new CognitoUserPool({
 
 const solutions: any[] = [
   {
-    name: 'Aboutus',
+    name: '',
     description: 'Get a better understanding of where your traffic is coming from.',
-    hrefHd: '/aboutus',
+    hrefHd: '/',
     icon: ChartBarIcon,
   }
 ]
@@ -57,11 +57,12 @@ type Props = {
 };
 
 const Header = () => {
-  const [navbar, setNavbar] = useState(false);
+  // const [navbar, setNavbar] = useState(false);
   const [listHeader, setListHeader] = useState<Array<HeaderInfo>>([]);
   const router = useRouter()
-  const userStore = useSelector((state: RootState) => state.user)
-  const [isLogout, setIsLogout] = useState(false);
+  const userStore = useSelector((state: RootState) => state.user.userInfo)
+  const navbar = useSelector((state: RootState) => state.user.nav)
+  const [isOpen, setIsOpen] = useState("Open menu");
   const [user, setUser] = useState({});
   const dispatch = useDispatch();
   const localstorageGetInformation=localStorage.getItem('isLoggedIn')
@@ -83,7 +84,7 @@ const Header = () => {
           {
             name: 'AboutUs',
             description: 'Get a better understanding of where your traffic is coming from.',
-            hrefHd: '/',
+            hrefHd: '/aboutus',
             icon: ChartBarIcon,
           },{
             name: 'Product',
@@ -99,7 +100,7 @@ const Header = () => {
           {
             name: 'AboutUs',
             description: 'Get a better understanding of where your traffic is coming from.',
-            hrefHd: '/',
+            hrefHd: '/aboutus',
             icon: ChartBarIcon,
           },{
             name: 'Product',
@@ -136,12 +137,17 @@ const Header = () => {
       cognitoUser.signOut();
       dispatch(fetchRemoveUser() as unknown as AnyAction)
       router.push({
-        pathname: "/login"
+        pathname: "/"
       })
     }
 
   };
-  
+
+  const setNav = () => {
+    isOpen === "Open menu" ? dispatch(fetchSetNav(true) as unknown as AnyAction) :dispatch(fetchSetNav(false) as unknown as AnyAction)
+    
+  }
+   
   
   return (
     <header className={c("header overflow-hidden")} id="header">
@@ -149,7 +155,7 @@ const Header = () => {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
-              <Link href="#" key="home">
+              <Link href="/" key="home">
                 <span className="sr-only">Your Company</span>
                 <Image path="/logo.png" width={80} height={80}/>
               </Link>
@@ -159,13 +165,13 @@ const Header = () => {
                 navbar ? <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 
                 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 
                 focus:ring-inset focus:ring-indigo-500"
-                onClick={() => setNavbar(!navbar)}
+                onClick={setNav}
                 >
                   <span className="sr-only">Close menu</span>
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button> : <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 
                 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                onClick={() => setNavbar(!navbar)}>
+                onClick={setNav}>
                 <span className="sr-only">Open menu</span>
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </Popover.Button>
@@ -193,16 +199,9 @@ const Header = () => {
                 return (
                   <div>
                     <Label text={'email' in user ? user.email+"": ""}  ></Label>
-                    {/* <Link
-                      href="/logout"
-                      key={"logout"}
-                      className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                    >
-                      Logout
-                    </Link> */}
 
                     <Button className='ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700' 
-                     name={'Logout'} onClick={() =>onClickLogout()} type={'primary'}/>
+                     name={'Logout'} onClick={() =>onClickLogout()} type={'success'}/>
                   </div>
                 )
               } else {
@@ -278,11 +277,8 @@ const Header = () => {
                           <Label text={'email' in user ? user.email+"": ""}  ></Label>
                           <p className="mt-6 text-center text-base font-medium text-gray-500">
                             
-                            {/* <Link href="/logout" key={"signOutMobile"} className="text-indigo-600 hover:text-indigo-500" >
-                              Logout
-                            </Link> */}
                             <Button key={"signOutMobile"} className='text-indigo-600 hover:text-indigo-500' 
-                              name={'Logout'} onClick={() =>onClickLogout()} type={'primary'}/>
+                              name={'Logout'} onClick={() =>onClickLogout()} type={'success'}/>
                             
                           </p>
                         </div>

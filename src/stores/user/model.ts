@@ -8,4 +8,5 @@ export type UserInfo = {
 
 export type State = {
   userInfo: UserInfo | null, 
+  nav: boolean
 }

@@ -13,3 +13,7 @@ export const fetchRemoveUser = (): AsyncAction => async dispatch => {
   
   dispatch(actions.removeUser())
 }
+export const fetchSetNav = (nav: boolean): AsyncAction => async dispatch => {
+  
+  dispatch(actions.setNav(nav))
+}
