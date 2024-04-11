@@ -92,6 +92,11 @@ const Header = () => {
             hrefHd: '/policy',
             icon: ChartBarIcon,
           },{
+            name: 'Profile',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/profile',
+            icon: ChartBarIcon,
+          },{
             name: 'Product',
             description: 'Get a better understanding of where your traffic is coming from.',
             hrefHd: '/order',
@@ -106,6 +111,16 @@ const Header = () => {
             name: 'AboutUs',
             description: 'Get a better understanding of where your traffic is coming from.',
             hrefHd: '/',
+            icon: ChartBarIcon,
+          },{
+            name: 'Policy',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/policy',
+            icon: ChartBarIcon,
+          },{
+            name: 'Profile',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/profile',
             icon: ChartBarIcon,
           },{
             name: 'Product',
