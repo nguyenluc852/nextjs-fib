@@ -96,7 +96,6 @@ export const view = (useService: UseService) => {
       console.log("resend")
       
       if (userCognito) {
-        console.log("user", userCognito)
         userCognito.resendConfirmationCode((err, result) => {
           if (err) {
             console.log(err);
