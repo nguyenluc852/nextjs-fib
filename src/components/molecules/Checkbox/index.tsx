@@ -55,7 +55,7 @@ const Checkbox: React.FC<Props> = (props) => {
   return (
     <div className={c(className)}>
       <Label
-        className={"col-sm-2 col-form-label mt-1"}
+        className={"col-sm-2 col-form-label mt-2"}
         text={label}
         badge={badge}
         badgeStyle={badgeStyle}
@@ -64,7 +64,7 @@ const Checkbox: React.FC<Props> = (props) => {
         {list?.map((value, index) =>
           (() => {
             return (
-              <div className="form-check form-check-inline mt-2">
+              <div className="form-check form-check-inline mt-2 ml-2">
                 <input
                   className="form-check-input "
                   type="checkbox"
@@ -72,7 +72,7 @@ const Checkbox: React.FC<Props> = (props) => {
                   value="1"
                 />
                 <label
-                  className="form-check-label "
+                  className="form-check-label ml-2"
                   htmlFor={"inline_checkbox" + index}
                 >
                   {value}

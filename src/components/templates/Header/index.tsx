@@ -97,7 +97,7 @@ const Header = () => {
             hrefHd: '/profile',
             icon: ChartBarIcon,
           },{
-            name: 'Product',
+            name: 'Minning',
             description: 'Get a better understanding of where your traffic is coming from.',
             hrefHd: '/order',
             icon: ChartBarIcon,
@@ -123,7 +123,7 @@ const Header = () => {
             hrefHd: '/profile',
             icon: ChartBarIcon,
           },{
-            name: 'Product',
+            name: 'Minning',
             description: 'Get a better understanding of where your traffic is coming from.',
             hrefHd: '/order',
             icon: ChartBarIcon,
