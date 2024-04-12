@@ -38,10 +38,7 @@ export const view = (useService: UseService) => {
                 </span>
               </div>
 
-              <div className="grid grid-cols-3 gap-4">
-                <div className="mt-5">
-                  <img src="/vision1.jpg" alt="vision1" />
-                </div>
+              <div className="grid grid-cols-3 gap-4">           
                 <div className="col-span-2">
                   <div className="mt-5">
                     <div className="ml-[30px]">
@@ -180,10 +177,7 @@ export const view = (useService: UseService) => {
                       and financial access for everyone.
                     </p>
                   </div>
-                </div>
-                <div className="mt-5">
-                  <img src="/vision2.jpg" alt="vision2" />
-                </div>
+                </div>             
               </div>
             </div>
 
@@ -196,9 +190,6 @@ export const view = (useService: UseService) => {
               </div>
 
               <div className="grid grid-cols-3 gap-4">
-                <div className="mt-5">
-                  <img src="/vision3.jpg" alt="vision3" />
-                </div>
                 <div className="col-span-2">
                   <div className="mt-5">
                     <div className="ml-[30px]">

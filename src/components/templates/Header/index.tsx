@@ -39,7 +39,7 @@ const solutions: any[] = [
   {
     name: '',
     description: 'Get a better understanding of where your traffic is coming from.',
-    hrefHd: '/',
+    hrefHd: '/aboutus',
     icon: ChartBarIcon,
   }
 ]
@@ -84,7 +84,17 @@ const Header = () => {
           {
             name: 'AboutUs',
             description: 'Get a better understanding of where your traffic is coming from.',
-            hrefHd: '/aboutus',
+            hrefHd: '/',
+            icon: ChartBarIcon,
+          },{
+            name: 'Policy',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/policy',
+            icon: ChartBarIcon,
+          },{
+            name: 'Profile',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/profile',
             icon: ChartBarIcon,
           },{
             name: 'Product',
@@ -100,7 +110,17 @@ const Header = () => {
           {
             name: 'AboutUs',
             description: 'Get a better understanding of where your traffic is coming from.',
-            hrefHd: '/aboutus',
+            hrefHd: '/',
+            icon: ChartBarIcon,
+          },{
+            name: 'Policy',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/policy',
+            icon: ChartBarIcon,
+          },{
+            name: 'Profile',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/profile',
             icon: ChartBarIcon,
           },{
             name: 'Product',
