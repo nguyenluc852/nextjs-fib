@@ -3,6 +3,7 @@ import { RequestOrder, RequestEditOrder } from "../stores/order/model"
 import api from "../utils/api"
 
 export const getListOrder = async (token: String) => {
+    console.log( "fdsfsd token",token)
     const response = await api.get({url: 'order/list?', config: {headers: {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer '+ token
@@ -12,6 +13,8 @@ export const getListOrder = async (token: String) => {
 }
 
 export const updateOrder = async (param: RequestEditOrder, token: String) => {
+    console.log("params", param)
+    console.log("token", token)
     const formData = new FormData();
     formData.append("id", param.id)
     if (param) {
@@ -34,6 +37,8 @@ export const updateOrder = async (param: RequestEditOrder, token: String) => {
 }
 
 export const createOrder = async (param: RequestOrder, token: String) => {
+    console.log("params", param)
+    console.log("token", token)
     const formData = new FormData();
     formData.append("price", param.price);
     formData.append("amount", param.amount);
@@ -43,5 +48,6 @@ export const createOrder = async (param: RequestOrder, token: String) => {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer '+ token
       }}})
+    console.log("create res:",response)
     return response.data
 }
