@@ -37,7 +37,7 @@ const userPool = new CognitoUserPool({
 
 const solutions: any[] = [
   {
-    name: '',
+    name: 'AboutUs',
     description: 'Get a better understanding of where your traffic is coming from.',
     hrefHd: '/aboutus',
     icon: ChartBarIcon,
@@ -84,7 +84,7 @@ const Header = () => {
           {
             name: 'AboutUs',
             description: 'Get a better understanding of where your traffic is coming from.',
-            hrefHd: '/',
+            hrefHd: '/aboutus',
             icon: ChartBarIcon,
           },{
             name: 'Policy',
@@ -110,7 +110,7 @@ const Header = () => {
           {
             name: 'AboutUs',
             description: 'Get a better understanding of where your traffic is coming from.',
-            hrefHd: '/',
+            hrefHd: '/aboutus',
             icon: ChartBarIcon,
           },{
             name: 'Policy',
