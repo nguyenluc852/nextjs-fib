@@ -9,6 +9,7 @@ export type StakeInfo = {
   count: number,
   total: string,
   createAt: string,
+  amountStakeAvailble?: string
 }
 
 export type RequestStake = {

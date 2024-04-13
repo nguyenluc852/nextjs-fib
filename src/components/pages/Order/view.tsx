@@ -24,6 +24,8 @@ import ModalMessage from "../../organisms/Modal";
 import Checkbox from "../../molecules/Checkbox";
 import RadioButtons from "../../molecules/RadioButtons";
 import { RequestStake } from "../../../stores/stake/model";
+import { log } from "console";
+import LogUtil from "../../../utils/LogUtil";
 type Props = {
   className?: string
 }
@@ -31,7 +33,7 @@ export const view = (useService: UseService) => {
   const Home: NextPage = () => {
     const [gender, setGender] = useState(0)
     const [amount, setAmount] = useState("0")
-    const [amountAvailable, setAmountAvailable] = useState("1")
+    const [amountAvailable, setAmountAvailable] = useState("0")
     const [wallet, setWallet] = useState("")
     const [price, setPrice] = useState(0.025)
     const [seletected, setSelected] = useState(0)
@@ -95,6 +97,9 @@ export const view = (useService: UseService) => {
         setStake(stakeStore?.amount)
         setReward(stakeStore.reward)
         setTotal(stakeStore.total)
+        
+        setAmountAvailable(stakeStore.amountStakeAvailble != undefined? stakeStore.amountStakeAvailble : "0")
+        LogUtil.info("stake", stakeStore.amountStakeAvailble != undefined? stakeStore.amountStakeAvailble : "0")
       }
     },[stakeStore])
 
@@ -131,11 +136,11 @@ export const view = (useService: UseService) => {
 
     }
     const onClickRequestStake = async () => {
-      if (Object.keys(user).length > 0 && Number(stakeRequest) > 0) {
+      if (Object.keys(user).length > 0 && Number(amountAvailable) > 0) {
         setIsLoading(true)
         const stake: RequestStake = {
           wallet: 'wallet' in user ? user.wallet+"": "" ,
-          amount: stakeRequest,
+          amount: amountAvailable,
           time_expire : "365"
         }
         switch (seletectedRd) {
@@ -146,7 +151,6 @@ export const view = (useService: UseService) => {
         
         await createStake(stake, 'token' in user ? user.token+"": "")
         setIsLoading(false)
-        setIsShow(true)
         toast.success('You have been successfully staked !!!')
 
         await getStake('token' in user ? user.token+"": "", 'wallet' in user ? user.wallet+"": "" )
@@ -236,7 +240,7 @@ export const view = (useService: UseService) => {
                     selectedItem={seletectedRd} onRadioSelectedItem={function (idx: number): void {
                       setSelectedRd(idx)
                     } }/>
-                  <div className="flex flex-row ">  
+                  {/* <div className="flex flex-row ">  
                     <FormBlock 
                       label={"Stake: "} 
                       className="flex flex-row mt-2" 
@@ -246,7 +250,7 @@ export const view = (useService: UseService) => {
                       placeholder={"Input amount stake"} explain={""} 
                     />
                     <Label className="ms-2 mt-4" text={"FIB"}/>
-                  </div>
+                  </div> */}
                   <Button className="w-40 mt-5" name={"Request Stake"} onClick={onClickRequestStake} type={"success"} ></Button>
                 </div>
               }
