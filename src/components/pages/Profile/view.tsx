@@ -43,7 +43,7 @@ export const view = (useService: UseService) => {
                   Wallet:
                 </span>
                 <p className="mt-2 ml-[50px] font-normal text-gray-700 text-lg md:text-xl">
-                        ( Please fill in FIB token wallet address ! )
+                        ( Please send your FIB receiving wallet address )
                 </p>
               </div>
 
