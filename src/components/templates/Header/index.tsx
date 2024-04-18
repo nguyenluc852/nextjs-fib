@@ -82,31 +82,11 @@ const Header = () => {
       if (user.isAdmin === "0" && DateUtils.isSameOrAfter(lastLogin.toString(), currentTime)) {
         setListHeader([
           {
-            name: 'AboutUs',
-            description: 'Get a better understanding of where your traffic is coming from.',
-            hrefHd: '/aboutus',
-            icon: ChartBarIcon,
-          },{
-            name: 'Policy',
-            description: 'Get a better understanding of where your traffic is coming from.',
-            hrefHd: '/policy',
-            icon: ChartBarIcon,
-          },{
-            name: 'Profile',
-            description: 'Get a better understanding of where your traffic is coming from.',
-            hrefHd: '/profile',
-            icon: ChartBarIcon,
-          },{
             name: 'Minning',
             description: 'Get a better understanding of where your traffic is coming from.',
             hrefHd: '/order',
             icon: ChartBarIcon,
-          }
-        ])
-
-      } else if (user.isAdmin === "1" && DateUtils.isSameOrAfter(lastLogin.toString(), DateUtils.formatDateString(localstorageGetLastLogin))) {
-
-        setListHeader([
+          },
           {
             name: 'AboutUs',
             description: 'Get a better understanding of where your traffic is coming from.',
@@ -122,10 +102,32 @@ const Header = () => {
             description: 'Get a better understanding of where your traffic is coming from.',
             hrefHd: '/profile',
             icon: ChartBarIcon,
-          },{
+          }
+        ])
+
+      } else if (user.isAdmin === "1" && DateUtils.isSameOrAfter(lastLogin.toString(), DateUtils.formatDateString(localstorageGetLastLogin))) {
+
+        setListHeader([
+          {
             name: 'Minning',
             description: 'Get a better understanding of where your traffic is coming from.',
             hrefHd: '/order',
+            icon: ChartBarIcon,
+          },
+          {
+            name: 'AboutUs',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/aboutus',
+            icon: ChartBarIcon,
+          },{
+            name: 'Policy',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/policy',
+            icon: ChartBarIcon,
+          },{
+            name: 'Profile',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            hrefHd: '/profile',
             icon: ChartBarIcon,
           },{
             name: 'Admin',
@@ -153,7 +155,7 @@ const Header = () => {
     localStorage.removeItem("isLoggedIn")
     if (cognitoUser != null) {
       
-      console.log("Lougout ", cognitoUser)
+      // console.log("Lougout ", cognitoUser)
       cognitoUser.signOut();
       dispatch(fetchRemoveUser() as unknown as AnyAction)
       router.push({
@@ -228,7 +230,7 @@ const Header = () => {
                 return (
                   <div>
                     <Link
-                      href="/register"
+                      href={{ pathname: '/policy', query: { register: 'register' } }}
                       key={"signup"}
                       className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                     >
@@ -307,7 +309,7 @@ const Header = () => {
                       return (
                         <div>
                           <Link
-                            href="/register"
+                            href={{ pathname: '/policy', query: { register: 'register' } }}
                             key={"abc"}
                             className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                           >

@@ -37,40 +37,45 @@ export const view = (useService: UseService) => {
 
     const handleSignUp = async (e: React.FormEvent) => {
       e.preventDefault();
-      var attributeList: CognitoUserAttribute[] = [];
+      if (wallet != "") {
+        var attributeList: CognitoUserAttribute[] = [];
 
-      var dataIsAdmin = {
-        Name: 'custom:is_Admin',
-        Value: '0',
-      }
-      var dataWallet = {
-        Name: 'custom:wallet',
-        Value: '0',
-      }
-      var attributeIsAdmin =  new CognitoUserAttribute(dataIsAdmin);
-      attributeList.push(attributeIsAdmin)
-      attributeList.push(new CognitoUserAttribute(dataWallet))
+        var dataIsAdmin = {
+          Name: 'custom:is_Admin',
+          Value: '0',
+        }
+        var dataWallet = {
+          Name: 'custom:wallet',
+          Value: wallet,
+        }
+        var attributeIsAdmin =  new CognitoUserAttribute(dataIsAdmin);
+        attributeList.push(attributeIsAdmin)
+        attributeList.push(new CognitoUserAttribute(dataWallet))
 
-      try {
-        userPool.signUp(email, password, attributeList, [], async function(
-          err,
-          result
-        ) {
-          if (err) {
-            alert(err.message || JSON.stringify(err));
-            return;
-          }
-          var cognitoUser = result?.user;
-          setUserCognito(cognitoUser)
-          
-          // await router.push('/login');
-          setNewUser(true)
-          console.log('user name is ' + cognitoUser?.getUsername);
-          
-        });
-      } catch (err) {
-        console.error(err);
+        try {
+          userPool.signUp(email, password, attributeList, [], async function(
+            err,
+            result
+          ) {
+            if (err) {
+              alert(err.message || JSON.stringify(err));
+              return;
+            }
+            var cognitoUser = result?.user;
+            setUserCognito(cognitoUser)
+            
+            // await router.push('/login');
+            setNewUser(true)
+            console.log('user name is ' + cognitoUser?.getUsername);
+            
+          });
+        } catch (err) {
+          console.error(err);
+        }
+      } else{
+        toast.error("Please fill the wallet!!")
       }
+      
     }
 
     const handleConfirmSignUp = async (e: React.FormEvent) => {

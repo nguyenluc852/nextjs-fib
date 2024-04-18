@@ -115,19 +115,24 @@ export const view = (useService: UseService) => {
 
     const onClickOrder = async () => {
       if (Object.keys(user).length > 0 ) {
-        setIsLoading(true)
-        const order: RequestOrder = {
-          price: price+"",
-          wallet: 'wallet' in user ? user.wallet+"": "" ,
-          amount: amount,
-          quantity: estimatedQuantity
+        if ('wallet' in user  && user.wallet != "") {
+          setIsLoading(true)      
+          const order: RequestOrder = {
+            price: price+"",
+            wallet: user.wallet +"",
+            amount: amount,
+            quantity: estimatedQuantity
+          }
+          console.log(order)
+          
+          await createOrder(order, 'token' in user ? user.token+"": "")
+          setIsLoading(false)
+          setIsShow(true)
+          await getListOrder('token' in user ? user.token+"": "")
+        } else {
+          toast.error("Wallet is null.")
         }
-        console.log(order)
         
-        await createOrder(order, 'token' in user ? user.token+"": "")
-        setIsLoading(false)
-        setIsShow(true)
-        await getListOrder('token' in user ? user.token+"": "")
       }
       
     }

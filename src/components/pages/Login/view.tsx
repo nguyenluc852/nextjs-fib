@@ -98,6 +98,7 @@ export const view = (useService: UseService) => {
           onSuccess: (result) => {
 
             const idToken = result.getIdToken().getJwtToken()
+            
             cognitoUser.getSession(function (err: any, session: any){
               cognitoUser.getUserAttributes(function(err, result) {
                 if (err) {
@@ -120,7 +121,6 @@ export const view = (useService: UseService) => {
                 localStorage.setItem("lastLogin", DateUtils.formatDateString(new Date().toString()))
               })
             });
-            
             user.isAdmin === "1" ? router.push({
               pathname: "/admin"
             }) : router.push({

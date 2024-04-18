@@ -1,7 +1,7 @@
 import type { UseService } from "./service"
 import type {NextPage} from "../../../types/nextjs";
 
-import { useRouter } from "next/router"
+import router, { useRouter } from "next/router"
 import {ChangeEvent, useEffect, useState} from "react";
 import styles from '../../../../styles/Home.module.css'
 import c from "clsx";
@@ -18,13 +18,24 @@ import { RootState } from "../../../stores";
 import { RequestOrder } from "../../../stores/order/model";
 import { toast } from "react-toastify";
 import DateUtils from "../../../utils/date";
+import Checkbox from "../../molecules/Checkbox";
+import LogUtil from "../../../utils/LogUtil";
 type Props = {
   className?: string
 }
 export const view = (useService: UseService) => {
   const WhiteBook: NextPage = () => {
-    
-   
+  
+    const [isCheck, setIsCheck] = useState(false)
+    const {query: { register },} = router
+
+    const onClickContinue= () => {
+      if (isCheck) {
+
+        router.push({pathname: "/register"})
+      }
+        
+    }
 
     return <main className={c(styles.main)}>
         <div className="responsive">
@@ -112,7 +123,20 @@ export const view = (useService: UseService) => {
                   </p>
                    
                 </div>
+                {register != undefined && <div className="mt-5 ml-[30px]">
+                  <div className="flex items-center flex-row">
+                    <input id="link-checkbox" type="checkbox" 
+                      checked = {isCheck}
+                      onClick={() => setIsCheck(!isCheck)}
+                      className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"></input>
+                    <label htmlFor="link-checkbox" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the terms and conditions.</label>
+                  </div>
+                  <Button className="mt-2 flex items-center" isDisable= {!isCheck} name={"Continue"} onClick={onClickContinue} type={"success"}/>
+                </div>
+                }
               </div>
+
+
             </div>
           </div>
         </div>         
