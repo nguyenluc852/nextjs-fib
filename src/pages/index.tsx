@@ -33,17 +33,18 @@ export default function Home() {
                       <div className="mt-5">
                         <div className="ml-[30px]">
                           <p className="font-bold text-[25px] text-neutral-50">
-                          Web3 is having a profound impact on the financial sector, opening 
-                          up new opportunities and changing the way we approach and interact 
-                          with finance. These potentials have not yet been fully exploited and 
-                          there are many aspects left to explore and develop in the future.
+                          Web3 is having a profound impact on the media, finance-economics and 
+                          education sectors, opening up new opportunities and changing the way 
+                          we approach and interact. These potentials have not yet been fully 
+                          exploited and there are many aspects left to explore and develop in 
+                          the future.
                           </p>
                           <p className="mt-2 font-bold text-[25px] text-neutral-50">
-                          The FIB token was created to leverage the potential of Web3 in the 
-                          financial sector by providing a decentralized, fair and transparent 
-                          financial ecosystem. The FIB token allows users to access financial 
-                          services easily and securely, while creating financial investment 
-                          opportunities for those with limited access to products and services.
+                          The FIE token was created to leverage the potential of Web3 in the 
+                          media, finance-economics and education sectors by providing a 
+                          decentralized, fair and transparent ecosystem. The FIE token 
+                          allows users to access services easily and securely, while creating 
+                          access opportunities for those with limited access to products and services.
                           </p>
                           <p className="font-bold text-[25px] text-neutral-50 mt-5">
                           Discover now 
