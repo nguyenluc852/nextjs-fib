@@ -58,7 +58,6 @@ export const view = (useService: UseService) => {
                   Logout
                 </span>
               </div>
-              
             </div>
           </div>
         </div>

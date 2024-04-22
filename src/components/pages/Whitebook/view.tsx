@@ -28,7 +28,7 @@ export const view = (useService: UseService) => {
 
     return <main className={c(styles.main)}>
         <main
-        className={c(styles.main)}
+        className={c(styles.main,"bg-backgr1 bg-no-repeat bg-cover bg-center")}
         >
         <div className="responsive">
           <div className="container">

@@ -29,7 +29,9 @@ export const view = (useService: UseService) => {
    
 
     return <main className={c(styles.main)}>
-
+      <main
+        className={c(styles.main,"bg-backgr4 bg-no-repeat bg-cover bg-center")}
+      >
       <div className="responsive">
         <div className="container">
           <div className="sm:ml-20 mt-20 flex-col xl:flex-row flex justify-between">
@@ -37,7 +39,7 @@ export const view = (useService: UseService) => {
                 <h1 className="font-bold text-gray-700 text-3xl md:text-6xl leading-tight mb-10">Token FIE</h1>
 
                 <p className="font-normal text-gray-500 text-sm md:text-lg mb-10">
-                FIE token (full name: FinEdu) was created to apply and to solve challenges 
+                Token FIE (full name: FinEdu) was created to apply and to solve challenges 
                 and open up great potential in three key areas of society: communication, 
                 finance-economics and education on blockchain platform
                 </p>
@@ -856,6 +858,7 @@ export const view = (useService: UseService) => {
 
         </div>
       </div>
+      </main>
     </main>
   }
   return Ecosystem

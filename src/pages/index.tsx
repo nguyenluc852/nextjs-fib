@@ -20,43 +20,79 @@ export default function Home() {
         className={c(styles.main)}
       >
         <main
-        className={c(styles.main, "bg-backgr3 bg-no-repeat bg-cover bg-center")}
-       >
+          className={c(styles.main,"bg-backgr1 bg-no-repeat bg-cover bg-center")}
+        >
         <div className="responsive">
           <div className="container">
-             <div className="mt-3">
-                <span className="text-[50px] leading-[44px] font-bold bg-gradient-to-r text-transparent bg-clip-text from-[#8D42E7] via-[#E7429B] to-[#E7A542]">
-                Digital era Web3
+             <div className="mt-5">
+                <span className="font-bold text-3xl leading-4 text-white ">
+                 Digital era Web3
                 </span>
+
                 <div className="grid grid-cols-10 gap-3">
                     <div className="col-span-6">
                       <div className="mt-5">
-                        <div className="ml-[30px]">
-                          <p className="font-bold text-[25px] text-neutral-50">
-                          Web3 is having a profound impact on the media, finance-economics and 
-                          education sectors, opening up new opportunities and changing the way 
-                          we approach and interact. These potentials have not yet been fully 
-                          exploited and there are many aspects left to explore and develop in 
-                          the future.
-                          </p>
-                          <p className="mt-2 font-bold text-[25px] text-neutral-50">
-                          The FIE token was created to leverage the potential of Web3 in the 
-                          media, finance-economics and education sectors by providing a 
-                          decentralized, fair and transparent ecosystem. The FIE token 
-                          allows users to access services easily and securely, while creating 
-                          access opportunities for those with limited access to products and services.
-                          </p>
-                          <p className="font-bold text-[25px] text-neutral-50 mt-5">
-                          Discover now 
-                          </p>
+                        <div className="ml-[30px] text-white">
+                          <div>
+                            <p className="font-bold text-lg">
+                              Web3 is having a profound impact on the media, finance-economics and 
+                              education sectors, opening up new opportunities and changing the way 
+                              we approach and interact. These potentials have not yet been fully 
+                              exploited and there are many aspects left to explore and develop in 
+                              the future.
+                            </p>
+                          </div>
+
+                          <div>
+                            <p className="mt-5 font-bold text-lg">
+                              The FIE token was created to leverage the potential of Web3 in the 
+                              media, finance-economics and education sectors by providing a 
+                              decentralized, fair and transparent ecosystem. The FIE token 
+                              allows users to access services easily and securely, while creating 
+                              access opportunities for those with limited access to products and services.
+                            </p>
+                          </div>
+
+                          <div>
+                            <p className="font-bold text-lg mt-5">
+                              Discover now 
+                            </p>
+                          </div>
+
                         </div>
                       </div>
                     </div>
                 </div>
-          </div>
+
+                <div className="mt-20">
+                  <div className="grid grid-cols-2 gap-12 gap-x-10 gap-y-5">
+                    <div className="bg-white rounded-lg shadow-xl py-8">
+                      <div className="text-center font-bold text-2xl">
+                        Finance - Economics
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-lg shadow-xl py-8">
+                      <div className="text-center font-bold text-2xl">
+                        Education
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-lg shadow-xl py-48">
+                      <div className="">
+
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-lg shadow-xl py-48">
+                      <div className="">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
           </div>
         </div>
-      </main>
+        </main>
       </main>
     </>
   )
