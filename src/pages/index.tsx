@@ -20,7 +20,7 @@ export default function Home() {
         className={c(styles.main)}
       >
         <main
-          className={c(styles.main,"bg-backgr1 bg-no-repeat bg-cover bg-center")}
+          className={c(styles.main,"bg-backgr4 bg-no-repeat bg-cover bg-center")}
         >
         <div className="responsive">
           <div className="container">
@@ -64,28 +64,253 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="mt-20">
-                  <div className="grid grid-cols-2 gap-12 gap-x-10 gap-y-5">
+{/* Bang */}
+            <div className="mt-20">
+                  <div className="grid grid-cols-3 gap-12 gap-x-10 gap-y-5">
+                    {/* Cot1 */}
                     <div className="bg-white rounded-lg shadow-xl py-8">
                       <div className="text-center font-bold text-2xl">
-                        Finance - Economics
+                        Leading prestigious fund organization
                       </div>
                     </div>
+                    {/* Cot2 */}
                     <div className="bg-white rounded-lg shadow-xl py-8">
                       <div className="text-center font-bold text-2xl">
-                        Education
+                        Leading reputable forex trading platform
                       </div>
                     </div>
-                    <div className="bg-white rounded-lg shadow-xl py-48">
-                      <div className="">
+                    {/* Cot3 */}
+                    <div className="bg-white rounded-lg shadow-xl py-8">
+                      <div className="text-center font-bold text-2xl">
+                        Leading reputable cryptocurrency exchange
+                      </div>
+                    </div>
 
-                      </div>
-                    </div>
-                    <div className="bg-white rounded-lg shadow-xl py-48">
-                      <div className="">
+{/* Cot1 */}
+                    <div className="bg-white rounded-lg shadow-xl py-5">
 
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              1. Hennessy Foundation
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/hennessy.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
                       </div>
+                      
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              2. MUAM MUFG fund
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/muam.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              3. Daiwa Fund
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/daiwa.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              4. Nikko AM
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/nikko.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              5. Sumitomo Mitsui Trust Asset Management
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/sumi.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
                     </div>
+
+{/* cot2 */}
+                    <div className="bg-white rounded-lg shadow-xl py-5">
+
+                     <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              1. Exness   
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/exness.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              2. XM
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/xm.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              3. XTB
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/xtb.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              4. IC Markets
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/icm.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              5. FBS
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/fbs.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
+                    </div>
+
+{/* cot3 */}
+                    <div className="bg-white rounded-lg shadow-xl py-5">
+
+                    <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              1. Binance ( binance.com )
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/binance.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+                      
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              2. OKX
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/okx.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              3. Bybit
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/bybit.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="mt-1">
+                        <div className="ml-[30px] flex text-center items-center">
+                            <p className="font-normal text-gray-700 text-xl md:text-xl">
+                              4. Remitano
+                            </p>
+                        </div>
+                        <div className="mt-5">
+                          <img
+                            src="/remitano.jpg"
+                            alt="Anh"
+                            className="bg-no-repeat bg-cover"
+                          />
+                        </div>
+                      </div>                     
+                      
+                    </div>
+
                   </div>
                 </div>
 
